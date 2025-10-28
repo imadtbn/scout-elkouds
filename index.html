@@ -16,159 +16,159 @@
     <!-- أيقونة الموقع -->
     <link rel="icon" href="icons/scout-logo.png" alt="icon" type="image/png" loading="lazy" class="welcome-logo">
 
-<style>
-/* تحسينات استجابة التقويم للشاشات الصغيرة */
-@media (max-width: 768px) {
-    .calendar-container {
-        padding: 1rem;
-        margin: 1rem 0.5rem;
-    }
-    
-    .calendar-header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-        margin-bottom: 1.5rem;
-    }
-    
-    .calendar-header h3 {
-        font-size: 1.4rem;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .calendar-nav {
-        width: 100%;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .nav-button {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .calendar-grid {
-        gap: 4px;
-        margin-bottom: 1.5rem;
-    }
-    
-    .calendar-day {
-        padding: 8px 2px;
-        font-size: 0.8rem;
-        border-radius: 5px;
-    }
-    
-    .calendar-date {
-        min-height: 50px;
-        padding: 5px 2px;
-        font-size: 0.8rem;
-        border-radius: 5px;
-    }
-    
-    .event-title {
-        font-size: 0.6rem;
-        margin-top: 2px;
-    }
-    
-    .event-time {
-        font-size: 0.5rem;
-        margin-top: 1px;
-    }
-    
-    .upcoming-events {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-    }
-    
-    .upcoming-title {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-    }
-    
-    .events-list {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .event-card {
-        padding: 1rem;
-    }
-    
-    .event-card-header {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
-    }
-    
-    .event-details {
-        gap: 0.5rem;
-    }
-    
-    .event-detail {
-        font-size: 0.8rem;
-    }
-}
+    <style>
+        /* تحسينات استجابة التقويم للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .calendar-container {
+                padding: 1rem;
+                margin: 1rem 0.5rem;
+            }
 
-@media (max-width: 480px) {
-    .calendar-container {
-        padding: 0.8rem;
-        margin: 0.5rem 0.25rem;
-    }
-    
-    .calendar-header h3 {
-        font-size: 1.2rem;
-    }
-    
-    .nav-button {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-    
-    .calendar-day {
-        padding: 6px 1px;
-        font-size: 0.7rem;
-    }
-    
-    .calendar-date {
-        min-height: 40px;
-        padding: 3px 1px;
-        font-size: 0.7rem;
-    }
-    
-    .event-title {
-        font-size: 0.5rem;
-    }
-    
-    .event-time {
-        font-size: 0.45rem;
-    }
-    
-    .event-dot {
-        width: 6px;
-        height: 6px;
-    }
-}
+            .calendar-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
 
-/* تحسينات إضافية للتقويم */
-.calendar-date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
+            .calendar-header h3 {
+                font-size: 1.4rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
 
-.calendar-date.event {
-    background: var(--light-red);
-    border: 1px solid var(--red);
-}
+            .calendar-nav {
+                width: 100%;
+                justify-content: center;
+                gap: 0.5rem;
+            }
 
-.current-day {
-    background: var(--green) !important;
-    color: var(--white) !important;
-    font-weight: bold;
-}
-</style>
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .calendar-grid {
+                gap: 4px;
+                margin-bottom: 1.5rem;
+            }
+
+            .calendar-day {
+                padding: 8px 2px;
+                font-size: 0.8rem;
+                border-radius: 5px;
+            }
+
+            .calendar-date {
+                min-height: 50px;
+                padding: 5px 2px;
+                font-size: 0.8rem;
+                border-radius: 5px;
+            }
+
+            .event-title {
+                font-size: 0.6rem;
+                margin-top: 2px;
+            }
+
+            .event-time {
+                font-size: 0.5rem;
+                margin-top: 1px;
+            }
+
+            .upcoming-events {
+                margin-top: 2rem;
+                padding-top: 1.5rem;
+            }
+
+            .upcoming-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .events-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .event-card {
+                padding: 1rem;
+            }
+
+            .event-card-header {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            .event-details {
+                gap: 0.5rem;
+            }
+
+            .event-detail {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar-container {
+                padding: 0.8rem;
+                margin: 0.5rem 0.25rem;
+            }
+
+            .calendar-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .nav-button {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+
+            .calendar-day {
+                padding: 6px 1px;
+                font-size: 0.7rem;
+            }
+
+            .calendar-date {
+                min-height: 40px;
+                padding: 3px 1px;
+                font-size: 0.7rem;
+            }
+
+            .event-title {
+                font-size: 0.5rem;
+            }
+
+            .event-time {
+                font-size: 0.45rem;
+            }
+
+            .event-dot {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        /* تحسينات إضافية للتقويم */
+        .calendar-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .calendar-date.event {
+            background: var(--light-red);
+            border: 1px solid var(--red);
+        }
+
+        .current-day {
+            background: var(--green) !important;
+            color: var(--white) !important;
+            font-weight: bold;
+        }
+    </style>
 
     <style>
         :root {
@@ -2159,15 +2159,419 @@
             }
         }
     </style>
-    
+
+    <!-- القسم الرئيسي تحسين -->
+    <style>
+        :root {
+            --primary-color: #1e6f5c;
+            --secondary-color: #289672;
+            --accent-color: #e6dd3b;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --header-height: 80px;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        /* الشريط العلوي */
+        .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            height: 70px;
+            background: rgba(30, 111, 92, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            padding: 2px;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-img {
+            transform: rotate(10deg);
+            border-color: white;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-subtext {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: right 0.5s;
+        }
+
+        .nav-menu a:hover::before {
+            right: 100%;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a.active {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu:hover {
+            color: var(--accent-color);
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            margin-top: calc(-1 * var(--header-height));
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 5px;
+            }
+
+            .nav-menu a {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .logo-subtext {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: 70px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - var(--header-height));
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                flex-direction: column;
+                padding: 30px 20px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu a {
+                padding: 15px 20px;
+                border-radius: 10px;
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .logo-img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .logo-subtext {
+                font-size: 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 0.9rem;
+            }
+
+            .logo-subtext {
+                font-size: 0.7rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        /* تأثيرات إضافية */
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+            right: 10%;
+        }
+
+        /* تأثير التمرير الناعم */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <script>
+        // تفعيل القائمة المتنقلة
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        const header = document.querySelector('.header');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.querySelector('i').classList.toggle('fa-bars');
+            mobileMenu.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // إغلاق القائمة عند النقر على رابط
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+                mobileMenu.querySelector('i').classList.remove('fa-times');
+
+                // إضافة active class للرابط المختار
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        // تأثير التمرير على الشريط العلوي
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // تفعيل التمرير السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // اكتشاف القسم النشط أثناء التمرير
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
+
     <!-- الشريط العلوي -->
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="icons/icon.jpg" alt="شعار الكشافة" class="logo-img" />
+                <!-- استبدل مسار الصورة بالمسار الصحيح -->
+                <img src="icons/icon.jpg" alt="شعار الكشافة" loading="lazy" class="logo-img" />
                 <div>
                     <div class="logo-text">قدماء الكشافة الإسلامية الجزائرية</div>
                     <div class="logo-subtext">فوج القدس - سيدي داود</div>
@@ -2177,7 +2581,7 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#home" class="active">الرئيسية</a></li>
                 <li><a href="#about">عن الكشافة</a></li>
                 <li><a href="#history">التاريخ</a></li>
                 <li><a href="#organization">التنظيم</a></li>
@@ -2186,7 +2590,6 @@
                 <li><a href="#contact">اتصل بنا</a></li>
             </ul>
         </nav>
-
     </header>
 
     <body>
@@ -2195,189 +2598,12 @@
             <div class="hero-content">
                 <h1>قدماء الكشافة الإسلامية الجزائرية - فوج القدس</h1>
                 <p>"نربي جيلاً يعتز بدينه ويخلص لوطنه ويفخر بانتمائه"</p>
-                <button class="cta-button" id="joinBtn">انضم إلينا <i class="fas fa-arrow-left"></i></button>
+                <button class="cta-button" id="joinBtn" onclick="window.open('https://forms.gle/PCqoSjVaShdYwV8E9')">
+                    انضم إلينا - تسجيل <i class="fas fa-arrow-left"></i>
+                </button>
             </div>
         </section>
 
-        <!-- نافذة التسجيل -->
-        <div class="modal" id="registrationModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>نموذج التسجيل في الكشافة</h2>
-                    <button class="close-btn" id="closeModal">&times;</button>
-                </div>
-                <div class="form-container">
-                    <form id="registrationForm"
-                        action="https://docs.google.com/forms/d/e/1FAIpQLSdCqq1VwXFcIsybo5AhxWoklend_KZb1FD6dWo7rC0Eg238kQ/formResponse"
-                        method="POST">
-                        <!-- قسم معلومات الابن -->
-                        <div class="form-section">
-                            <h3>معلومات الابن/البنت</h3>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="childName">الاسم الكامل</label>
-                                    <input type="text" id="childName" name="entry.107211546" class="form-control"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="childBirthDate">تاريخ الميلاد</label>
-                                    <input type="date" id="childBirthDate" name="entry.1743335811" class="form-control"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="childSchool">المدرسة</label>
-                                    <input type="text" id="childSchool" name="entry.1958662213" class="form-control"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="childGrade">الصف الدراسي</label>
-                                    <input type="text" id="childGrade" name="entry.607985491" class="form-control"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="childBloodType">فصيلة الدم</label>
-                                    <select id="childBloodType" name="entry.892333117" class="form-control" required>
-                                        <option value="">اختر فصيلة الدم</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="childHealthIssues">مشاكل صحية (إن وجدت)</label>
-                                    <textarea id="childHealthIssues" name="entry.1583636180" class="form-control"
-                                        rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- قسم معلومات ولي الأمر -->
-                        <div class="form-section">
-                            <h3>معلومات ولي الأمر</h3>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="parentName">الاسم الكامل</label>
-                                    <input type="text" id="parentName" name="entry.1383621325" class="form-control"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="parentRelation">صلة القرابة</label>
-                                    <select id="parentRelation" name="entry.175751793" class="form-control" required>
-                                        <option value="">اختر صلة القرابة</option>
-                                        <option value="الأب">الأب</option>
-                                        <option value="الأم">الأم</option>
-                                        <option value="الوصي">الوصي</option>
-                                        <option value="أخرى">أخرى</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="parentPhone">رقم الهاتف</label>
-                                    <input type="tel" id="parentPhone" name="entry.1975905299" class="form-control"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="parentEmail">البريد الإلكتروني</label>
-                                    <input type="email" id="parentEmail" name="entry.1367315236" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="parentJob">المهنة</label>
-                                    <input type="text" id="parentJob" name="entry.1341534608" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- قسم العنوان -->
-                        <div class="form-section">
-                            <h3>العنوان</h3>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="addressStreet">الشارع والرقم</label>
-                                    <input type="text" id="addressStreet" name="entry.1024762946" class="form-control"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="addressDistrict">الحي/المنطقة</label>
-                                    <input type="text" id="addressDistrict" name="entry.149732468" class="form-control"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="addressCity">المدينة</label>
-                                    <input type="text" id="addressCity" name="entry.1292359260" class="form-control"
-                                        required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="submit-btn">إرسال التسجيل</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            // التحكم في فتح وإغلاق نافذة التسجيل
-            const joinBtn = document.getElementById('joinBtn');
-            const registrationModal = document.getElementById('registrationModal');
-            const closeModal = document.getElementById('closeModal');
-            const registrationForm = document.getElementById('registrationForm');
-
-            joinBtn.addEventListener('click', () => {
-                registrationModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeModal.addEventListener('click', () => {
-                registrationModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-
-            // إغلاق النافذة عند النقر خارجها
-            window.addEventListener('click', (e) => {
-                if (e.target === registrationModal) {
-                    registrationModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // معالجة إرسال النموذج
-            registrationForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // هنا يمكن إضافة التحقق من البيانات قبل الإرسال
-                const formData = new FormData(this);
-
-                // إرسال البيانات إلى Google Forms
-                fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors'
-                }).then(() => {
-                    // إظهار رسالة نجاح
-                    alert('تم إرسال طلب التسجيل بنجاح! سنتواصل معكم قريباً.');
-                    registrationModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    registrationForm.reset();
-                }).catch(error => {
-                    alert('حدث خطأ أثناء إرسال البيانات. يرجى المحاولة مرة أخرى.');
-                    console.error('Error:', error);
-                });
-            });
-        </script>
 
         <!-- قسم عن الكشافة -->
         <section class="section" id="about">
@@ -2386,7 +2612,7 @@
 
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/rouia.jpg" alt="رؤية الكشافة">
+                        <img src="images/rouia.jpg" loading="lazy" alt="رؤية الكشافة">
                         <div class="icon-overlay">
                             <i class="fas fa-binoculars"></i>
                         </div>
@@ -2401,7 +2627,7 @@
 
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/message.jpg" alt="رسالة الكشافة">
+                        <img src="images/message.jpg" loading="lazy" alt="رسالة الكشافة">
                         <div class="icon-overlay">
                             <i class="fas fa-bullseye"></i>
                         </div>
@@ -2415,7 +2641,7 @@
 
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/kiyam.jpg" alt="قيم الكشافة">
+                        <img src="images/kiyam.jpg" loading="lazy" alt="قيم الكشافة">
                         <div class="icon-overlay">
                             <i class="fas fa-star"></i>
                         </div>
@@ -2534,7 +2760,7 @@
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/chiblat.jpg" alt="مرحلة الأشبال">
+                        <img src="images/chiblat.jpg" loading="lazy" alt="مرحلة الأشبال">
                         <div class="card-badge">8-12 سنة</div>
                     </div>
                     <div class="card-content">
@@ -2553,7 +2779,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/scout.jpg" alt="مرحلة الكشافة">
+                        <img src="images/scout.jpg" loading="lazy" alt="مرحلة الكشافة">
                         <div class="card-badge">12-16 سنة</div>
                     </div>
                     <div class="card-content">
@@ -2572,7 +2798,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/lesanounces.jpg" alt="مرحلة المتقدمون">
+                        <img src="images/lesanounces.jpg" loading="lazy" alt="مرحلة المتقدمون">
                         <div class="card-badge">16-20 سنة</div>
                     </div>
                     <div class="card-content">
@@ -2591,7 +2817,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/mobile.jpg" alt="مرحلة الجوالة">
+                        <img src="images/mobile.jpg" loading="lazy" alt="مرحلة الجوالة">
                         <div class="card-badge">20+ سنة</div>
                     </div>
                     <div class="card-content">
@@ -2623,7 +2849,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-image">
-                        <img src="images/chiblat.jpg" alt="مرحلة الأشبال">
+                        <img src="images/chiblat.jpg" loading="lazy" alt="مرحلة الأشبال">
                     </div>
                     <div class="modal-info">
                         <h4>عن المرحلة</h4>
@@ -2664,7 +2890,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-image">
-                        <img src="images/scout.jpg" alt="مرحلة الكشافة">
+                        <img src="images/scout.jpg" loading="lazy" alt="مرحلة الكشافة">
                     </div>
                     <div class="modal-info">
                         <h4>عن المرحلة</h4>
@@ -2706,7 +2932,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-image">
-                        <img src="images/lesanounces.jpg" alt="مرحلة المتقدمون">
+                        <img src="images/lesanounces.jpg" loading="lazy" alt="مرحلة المتقدمون">
                     </div>
                     <div class="modal-info">
                         <h4>عن المرحلة</h4>
@@ -2748,7 +2974,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-image">
-                        <img src="images/mobile.jpg" alt="مرحلة الجوالة">
+                        <img src="images/mobile.jpg" loading="lazy" alt="مرحلة الجوالة">
                     </div>
                     <div class="modal-info">
                         <h4>عن المرحلة</h4>
@@ -2947,7 +3173,7 @@
                 <div class="card">
                     <div class="card-img">
                         <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                            alt="عنوان الكشافة">
+                            loading="lazy" alt="عنوان الكشافة">
                         <div class="card-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -2981,7 +3207,7 @@
                 <div class="card">
                     <div class="card-img">
                         <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                            alt="اتصل بنا">
+                            loading="lazy" alt="اتصل بنا">
                         <div class="card-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -3017,7 +3243,7 @@
                 <div class="card">
                     <div class="card-img">
                         <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                            alt="راسلنا">
+                            loading="lazy" alt="راسلنا">
                         <div class="card-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -3054,28 +3280,7 @@
                 <h3 class="form-title">
                     <i class="fas fa-comment-dots"></i> أرسل لنا رسالة
                 </h3>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label class="form-label" for="name">الاسم الكامل</label>
-                        <input type="text" id="name" class="form-input" placeholder="أدخل اسمك الكامل" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="phone">رقم الهاتف</label>
-                        <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="subject">الموضوع</label>
-                        <input type="text" id="subject" class="form-input" placeholder="موضوع رسالتك" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label class="form-label" for="message">الرسالة</label>
-                        <textarea id="message" class="form-textarea" placeholder="اكتب رسالتك هنا..."
-                            required></textarea>
-                    </div>
+              
                     <div class="form-group full-width">
                         <button type="submit" class="form-submit">
                             <i class="fas fa-paper-plane"></i> إرسال الرسالة
@@ -3344,7 +3549,7 @@
                         }, 150);
 
                         if (this.classList.contains('cta-button')) {
-                            alert('مرحباً بك في فوج الكشافة! سيتواصل معك مسؤول العضوية قريباً.');
+                            alert('مرحباً بك في فوج القدس سيتواصل معك مسؤول العضوية قريباً.');
                         }
                     });
                 });
@@ -3770,11 +3975,11 @@
                 },
                 {
                     id: 10,
-                    src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                    src: "images/nettoyage.jpg",
                     category: "community",
-                    title: "زيارة دار المسنين",
-                    description: "زيارة ترفيهية وتوعوية لدار المسنين ضمن أنشطة خدمة المجتمع",
-                    date: "12 نوفمبر 2024"
+                    title: "حملة تنظيف الشوارع",
+                    description: "حملة تنظيف الشوارع بسيدي داود ضمن أنشطة خدمة المجتمع",
+                    date: "13 سبتمبر 2025"
                 },
                 {
                     id: 11,
