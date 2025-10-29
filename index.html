@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-<meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
     <!-- ضبط العرض للهواتف -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="description" content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود. نربي جيلاً يعتز بدينه ويخلص لوطنه ويفخر بانتمائه من خلال أنشطة كشفية تربوية ووطنية.">
-
-<meta name="keywords" content="الكشافة الإسلامية الجزائرية, فوج القدس, سيدي داود, أنشطة كشفية, قدماء الكشافة, الجزائر, scout algerie, scout el kouds">
-<meta name="author" content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود">
-<meta name="robots" content="index, follow">
-
     <!-- أيقونة الموقع -->
     <link rel="icon" href="icons/scout-logo.png" alt="icon" type="image/png" loading="lazy" class="welcome-logo">
+
+    <!-- تأكيد الملكية google -->
+    <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
+
+    <meta name="description"
+        content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود. نربي جيلاً يعتز بدينه ويخلص لوطنه ويفخر بانتمائه من خلال أنشطة كشفية تربوية ووطنية.">
+
+    <meta name="keywords"
+        content="الكشافة الإسلامية الجزائرية, فوج القدس, سيدي داود, أنشطة كشفية, قدماء الكشافة, الجزائر, scout algerie, scout el kouds">
+    <meta name="author" content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود">
+    <meta name="robots" content="index, follow">
+
 
     <style>
         :root {
@@ -191,6 +196,19 @@
             box-shadow: 0 8px 20px rgba(210, 16, 52, 0.6);
         }
 
+        .hero-content .cta-button+.cta-button {
+            margin-right: 15px;
+            /* حسب الاتجاه RTL */
+        }
+
+        @media (max-width: 768px) {
+            .hero-content .cta-button {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+                /* تباعد عمودي بين الزرين */
+            }
+        }
 
         .modal-header {
             background-color: var(--primary-color);
@@ -798,30 +816,6 @@
             background: var(--red);
             color: var(--white);
         }
-
-/* تحسين استجابة التقويم في الهواتف الصغيرة جداً */
-@media (max-width: 480px) {
-  .calendar-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-  .calendar-day {
-    font-size: 0.7rem;
-    padding: 6px 2px;
-  }
-  .calendar-date {
-    min-height: 45px;
-    font-size: 0.7rem;
-    padding: 4px 2px;
-  }
-}
-
-/* تحسين عرض الأيام الأفقية في الهواتف الطويلة */
-@media (max-width: 350px) {
-  .calendar-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
         /* النافذة المنبثقة */
         .modal {
@@ -1443,8 +1437,8 @@
         /* الوضع الليلي */
         #themeToggle {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 120px;
+            right: 20px;
             z-index: 1000;
             background-color: #007b55;
             color: white;
@@ -1983,7 +1977,6 @@
             background-color: #f5f5f5;
             color: var(--dark-color);
             line-height: 1.6;
-            padding-top: var(--header-height);
         }
 
         /* الشريط العلوي */
@@ -3293,11 +3286,17 @@
                 <p><a href="#about" style="color: white;">عن الكشافة</a></p>
                 <p><a href="#activities" style="color: white;">الأنشطة</a></p>
                 <p><a href="#contact" style="color: white;">اتصل بنا</a></p>
+                <p><a href="https://imadtbn.github.io/dz_portal/" target="_blank" style="color: white;">
+                        البوابة الجزائرية للخدمات الرقمية
+                    </a></p>
+
             </div>
             <div class="footer-section">
                 <h3>تابعنا على</h3>
                 <p>
-                    <i class="fab fa-facebook" style="margin-left: 10px;"></i>
+                    <a href="https://www.facebook.com/profile.php?id=100082879015150" target="_blank">
+                        <i class="fab fa-facebook" style="margin-left: 10px;"></i>
+                    </a>
                     <i class="fab fa-instagram" style="margin-left: 10px;"></i>
                     <i class="fab fa-youtube" style="margin-left: 10px;"></i>
                 </p>
@@ -3975,6 +3974,7 @@
         // تهيئة المعرض عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', initGallery);
     </script>
+
     <!-- زر الصعود للأعلى -->
     <script>
         const scrollBtn = document.getElementById("scrollTopBtn");
@@ -4032,6 +4032,7 @@
             if (e.target === membershipModal) membershipModal.style.display = "none";
         });
     </script>
+
 </body>
 
 </html>
