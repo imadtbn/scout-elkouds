@@ -1,8 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- الصفحة الرئيسية -->
   <url>
     <loc>https://imadtbn.github.io/scout-elkouds/</loc>
+    <lastmod>2025-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- عن الكشافة -->
+  <url>
+    <loc>https://imadtbn.github.io/scout-elkouds/#about</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- التاريخ -->
+  <url>
+    <loc>https://imadtbn.github.io/scout-elkouds/#history</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- التنظيم -->
+  <url>
+    <loc>https://imadtbn.github.io/scout-elkouds/#organization</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- الأنشطة -->
+  <url>
+    <loc>https://imadtbn.github.io/scout-elkouds/#activities</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- معرض الصور -->
+  <url>
+    <loc>https://imadtbn.github.io/scout-elkouds/#gallery</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- اتصل بنا -->
+  <url>
+    <loc>https://imadtbn.github.io/scout-elkouds/#contact</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
