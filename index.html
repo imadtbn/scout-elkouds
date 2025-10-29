@@ -27,32 +27,6 @@
     <meta name="robots" content="index, follow">
 
 
-<style>
-/* تحسين استجابة التقويم في الهواتف الصغيرة جداً */
-@media (max-width: 480px) {
-  .calendar-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-  .calendar-day {
-    font-size: 0.7rem;
-    padding: 6px 2px;
-  }
-  .calendar-date {
-    min-height: 45px;
-    font-size: 0.7rem;
-    padding: 4px 2px;
-  }
-}
-
-/* تحسين عرض الأيام الأفقية في الهواتف الطويلة */
-@media (max-width: 350px) {
-  .calendar-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-</style>
-
     <style>
         :root {
             --green: #006341;
@@ -1010,6 +984,31 @@
             }
         }
 
+        /* تحسين استجابة التقويم في الهواتف الصغيرة جداً */
+        @media (max-width: 480px) {
+            .calendar-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+
+            .calendar-day {
+                font-size: 0.7rem;
+                padding: 6px 2px;
+            }
+
+            .calendar-date {
+                min-height: 45px;
+                font-size: 0.7rem;
+                padding: 4px 2px;
+            }
+        }
+
+        /* تحسين عرض الأيام الأفقية في الهواتف الطويلة */
+        @media (max-width: 350px) {
+            .calendar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
         /* فلاتر التصنيف */
         .gallery-filters {
@@ -4056,4 +4055,5 @@
     </script>
 
 </body>
+
 </html>
