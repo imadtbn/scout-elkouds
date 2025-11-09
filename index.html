@@ -1391,11 +1391,12 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
             display: none;
-            align-items: center;
-            justify-content: center;
+            align-items: center !important;
+            justify-content: center !important;
             z-index: 2000;
             padding: 20px;
         }
+
 
         .modal-content {
             background: var(--white);
@@ -1404,6 +1405,7 @@
             max-width: 600px;
             width: 100%;
             max-height: 90vh;
+            margin: auto !important;
             overflow-y: auto;
             position: relative;
             box-shadow: var(--shadow-hover);
