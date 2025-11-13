@@ -422,7 +422,7 @@
         /* قسم الهيكل التنظيمي - تعديل تخطيط البطاقات */
         #organization .cards-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin-top: 40px;
         }
@@ -758,6 +758,48 @@
         }
 
         /* التقويم والأنشطة */
+
+        /* تحسين عرض أعمدة الأيام في التقويم */
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* يضمن عرض متساوٍ للأعمدة */
+        }
+
+        .calendar th,
+        .calendar td {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+            padding: 6px;
+            /* تقليل المسافة الداخلية قليلاً */
+            width: calc(100% / 6);
+            /* 7 أيام في الأسبوع */
+            font-size: 0.8rem;
+        }
+
+        .calendar th {
+            background-color: var(--green);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .calendar td {
+            height: 55px;
+            /* ارتفاع مناسب بدون تضخيم */
+        }
+
+        /* تحسين التجاوب */
+        @media (max-width: 768px) {
+            .calendar td {
+                padding: 4px;
+                height: 45px;
+                font-size: 0.8rem;
+            }
+        }
+
+
         .calendar-container {
             background: var(--white);
             border-radius: var(--border-radius);
@@ -963,6 +1005,31 @@
             background: var(--red);
         }
 
+        /* تنسيق عرض الأنشطة القادمة - 4 بطاقات في السطر */
+        .upcoming-events .events-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        /* تحسين العرض في الشاشات المتوسطة والصغيرة */
+        @media (max-width: 1200px) {
+            .upcoming-events .events-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .upcoming-events .events-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .upcoming-events .events-list {
+                grid-template-columns: 1fr;
+            }
+        }
 
         /* تحسين استجابة التقويم في الهواتف الصغيرة جداً */
         @media (max-width: 480px) {
@@ -2016,6 +2083,7 @@
                 <li><a href="#about">عن الكشافة</a></li>
                 <li><a href="#history">التاريخ</a></li>
                 <li><a href="#organization">التنظيم</a></li>
+                <li><a href="#posts">منشورات</a></li>
                 <li><a href="#activities">الأنشطة</a></li>
                 <li><a href="#gallery">معرض الصور</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
@@ -2465,6 +2533,293 @@
         </div>
     </div>
 
+    <!-- منشورات الفوج -->
+    <section class="section" id="posts">
+        <h2 class="section-title">منشورات الفوج</h2>
+        <div class="cards-grid">
+            <!-- منشور 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/inscription.png" loading="lazy" alt="inscription">
+                    <div class="card-badge">أكتوبر 2025</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
+                    <p>إقتتاح التسجيلات الكشفية للموسم 2025/2026.</p>
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="post1-modal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="card-button" onclick="sharePost('https://example.com/post1')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="load-more" style="text-align:center; margin-top:30px;">
+            <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
+        </div>
+
+    </section>
+
+    <!-- منشور 1: بداية التسجيلات -->
+    <div id="post1-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">تسجيلات</h3>
+                <p class="modal-subtitle">أكتوبر 2025</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/inscription.png" loading="lazy" alt="inscription">
+                </div>
+                <div class="modal-info">
+                    <h4>عن المنشور</h4>
+                    <p>يعلن فوج القدس لقدماء الكشافة الاسلامية لبلدية سيدي داود عن فتح باب الانخراط للراغبين بالاتحاق
+                        بصفوف الفوج فتية وقادة و قائدات .
+                        التسجيل يكون عبر الموقع الخاص بالفوج
+                        مرحبا بالجميع معنا و في صفوفنا
+                    </p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="action-button primary" onclick="sharePost('https://example.com/post1')">
+                    مشاركة <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // فتح النوافذ المنبثقة
+        document.querySelectorAll('[data-modal]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                if (modal) modal.style.display = 'flex';
+            });
+        });
+
+        // إغلاق النوافذ
+        document.querySelectorAll('.modal .close-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.modal').style.display = 'none';
+            });
+        });
+
+        // زر مشاركة المنشور
+        function sharePost(url) {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'منشور من فوج القدس',
+                    url: url
+                }).then(() => {
+                    console.log('تمت المشاركة بنجاح');
+                }).catch(console.error);
+            } else {
+                // للمتصفحات التي لا تدعم Web Share API
+                prompt('انسخ الرابط للمشاركة:', url);
+            }
+        }
+
+    </script>
+
+    <style>
+        /* ===== قسم المنشورات ===== */
+        #posts {
+            padding: 50px 0;
+            background: var(--light-gray);
+        }
+
+        #posts .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        #posts .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to left, var(--green), var(--red));
+            border-radius: 2px;
+        }
+
+        /* تخطيط البطاقات */
+        #posts .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* البطاقة */
+        #posts .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #posts .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* صورة البطاقة */
+        #posts .card-img {
+            height: 180px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+
+        #posts .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        #posts .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        /* محتوى البطاقة */
+        #posts .card-content {
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        #posts .card-content h3 {
+            color: var(--green);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        #posts .card-content p {
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* زر البطاقة */
+        #posts .card-button {
+            background: var(--green);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        #posts .card-button:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+        }
+
+        /* أيقونة فوق الصورة */
+        #posts .icon-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--green);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        /* زر المزيد من المنشورات */
+        #posts .load-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #posts .load-more-btn {
+            background: var(--green);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        #posts .load-more-btn:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* النوافذ المنبثقة للمنشورات */
+        #posts .modal-content {
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* تجاوب الشاشات الصغيرة */
+        @media (max-width: 992px) {
+            #posts .cards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #posts .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            #posts .card-img {
+                height: 200px;
+            }
+        }
+    </style>
+
     <!-- قسم الأنشطة -->
     <section class="section" id="activities" style="background: var(--light-red);">
         <h2 class="section-title">أنشطتنا وخرجاتنا</h2>
@@ -2911,7 +3266,10 @@
                 <p><a href="#home" style="color: white;">الرئيسية</a></p>
                 <p><a href="#about" style="color: white;">عن الكشافة</a></p>
                 <p><a href="#history" style="color: white;">التاريخ</a></p>
+                <p><a href="#organization" style="color: white;">التنظيم</a></p>
                 <p><a href="#activities" style="color: white;">الأنشطة</a></p>
+                <p><a href="#posts" style="color: white;">منشورات</a></p>
+                <p><a href="#gallery" style="color: white;">معرض الصور</a></p>
                 <p><a href="#contact" style="color: white;">اتصل بنا</a></p>
                 <p><a href="https://imadtbn.github.io/dz_portal/" target="_blank" style="color: white;">
                         البوابة الجزائرية للخدمات الرقمية
