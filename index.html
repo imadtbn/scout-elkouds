@@ -27,7 +27,7 @@
     <meta name="robots" content="index, follow">
 
     <!-- Structured Data: JSON-LD for Organization + Events -->
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -2638,7 +2638,7 @@
         </div>
     </section>
 
-                         <!-- النوافذ المنبثقة -->
+    <!-- النوافذ المنبثقة -->
     <!-- الأشبال  -->
     <div id="cubs-modal" class="modal">
         <div class="modal-content">
@@ -2807,21 +2807,21 @@
     </div>
 
     <!-- منشورات الفوج -->
-    <section class="section" id="posts">
+    <section class="section" id="posts">+
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
-            <!-- منشور 1 -->
+            <!-- منشور 3 -->
             <div class="card">
                 <div class="card-img">
-                    <img src="images/inscription.png" loading="lazy" alt="inscription">
-                    <div class="card-badge">أكتوبر 2025</div>
+                    <img src="images/Réunions.jpg" loading="lazy" alt="Réunions">
+                    <div class="card-badge">نوفمبر 2025</div>
                 </div>
                 <div class="card-content">
-                    <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
-                    <p>إقتتاح التسجيلات الكشفية للموسم 2025/2026.</p>
+                    <h3><i class="fas fa-clipboard"></i>ملتقيات</h3>
+                    <p>اللقاء الأول لمحافظي الأفواج تحت شعار: أفواجنا الكشفية ..قُوتنا</p>
                     <div class="card-buttons-container">
-                        <button class="card-button" data-modal="post1-modal">
+                        <button class="card-button" data-modal="post3-modal">
                             تعرف أكثر <i class="fas fa-arrow-left"></i>
                         </button>
                         <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
@@ -2835,7 +2835,7 @@
             <div class="card">
                 <div class="card-img">
                     <img src="images/quran2.jpg" loading="lazy" alt="quran-memoir">
-                    <div class="card-badge">أكتوبر 2025</div>
+                    <div class="card-badge">نوفمبر 2025</div>
                 </div>
                 <div class="card-content">
                     <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
@@ -2851,41 +2851,67 @@
                 </div>
             </div>
 
+            <!-- منشور 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/inscription.png" loading="lazy" alt="inscription">
+                    <div class="card-badge">نوفمبر 2025</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
+                    <p>إقتتاح التسجيلات الكشفية للموسم 2025/2026.</p>
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="post1-modal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="load-more" style="text-align:center; margin-top:30px;">
             <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
         </div>
 
+
     </section>
 
-    <!-- منشور 1: بداية التسجيلات -->
-    <div id="post1-modal" class="modal">
+    <!-- منشور 3: اللقاء الأول لمحافظي الأفواج -->
+    <div id="post3-modal" class="modal">
         <div class="modal-content">
             <button class="close-button">&times;</button>
+
             <div class="modal-header">
-                <h3 class="modal-title">تسجيلات</h3>
-                <p class="modal-subtitle">أكتوبر 2025</p>
+                <h3 class="modal-title">اللقاء الأول لمحافظي الأفواج</h3>
+                <p class="modal-subtitle">14 نوفمبر 2025</p>
             </div>
+
             <div class="modal-body">
                 <div class="modal-image">
-                    <img src="images/inscription.png" loading="lazy" alt="inscription">
+                    <img src="images/Réunions.jpg" loading="lazy" alt="Réunions">
                 </div>
+
                 <div class="modal-info">
                     <h4>عن المنشور</h4>
-                    <p>يعلن فوج القدس لقدماء الكشافة الاسلامية لبلدية سيدي داود عن فتح باب الانخراط للراغبين بالاتحاق
-                        بصفوف الفوج فتية وقادة و قائدات .
-                        التسجيل يكون عبر الموقع الخاص بالفوج
-                        مرحبا بالجميع معنا و في صفوفنا
+                    <p>
+                        شارك مساء اليوم الجمعة 14 نوفمبر 2025 قائد فوج <strong>القدس</strong> ببلدية <strong>سيدي
+                            داود</strong>، بن عاشور عبيدة، في اللقاء الأول لمحافظي الأفواج. ويأتي هذا اللقاء ضمن
+                        البرنامج المسطر بمناسبة الذكرى الـ71 لاندلاع الثورة التحريرية المجيدة.
                     </p>
+
+                    <p>#فوج_القدس_سيدي_داود</p>
                 </div>
             </div>
+
             <div class="modal-actions">
-                <button class="action-button primary" onclick="window.location.href='https://forms.gle/PCqoSjVaShdYwV8E9'">
-                    سجل الآن <i class="fas fa-user-graduate"></i>
+                <button class="action-button primary" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                    شارك الآن <i class="fas fa-share-alt"></i>
                 </button>
             </div>
-            
+
         </div>
     </div>
 
@@ -2903,11 +2929,16 @@
                 </div>
                 <div class="modal-info">
                     <h4>عن المنشور</h4>
-                    <p>من أجواء تحفيظ القرآن، يعلن فوج القدس لقدماء الكشافة الاسلامية لبلدية سيدي داود عن إفتتاح تسجيلات
-                        في دورات تحفيظ القرآن
+                    <p>
+                        من أجواء تحفيظ القرآن، يعلن فوج <strong>القدس</strong> لقدماء الكشافة الإسلامية ببلدية
+                        <strong>سيدي داود</strong> عن افتتاح التسجيلات في دورات تحفيظ القرآن الكريم.
                     </p>
-                    <p>الفئة العمرية: من 05 إلى 07 سنوات</p>
-                    <p>تحت اشراف القائد: شلال جابر</p>
+                    <p>
+                        الفئة العمرية: <strong>من 5 إلى 7 سنوات</strong>
+                    </p>
+                    <p>
+                        تحت إشراف القائد: <strong>شلال جابر</strong>
+                    </p>
 
                 </div>
             </div>
@@ -2916,7 +2947,40 @@
                     سجل الآن <i class="fas fa-user-graduate"></i>
                 </button>
             </div>
-            
+
+        </div>
+    </div>
+
+    <!-- منشور 1: بداية التسجيلات -->
+    <div id="post1-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">تسجيلات</h3>
+                <p class="modal-subtitle">أكتوبر 2025</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/inscription.png" loading="lazy" alt="inscription">
+                </div>
+                <div class="modal-info">
+                    <h4>عن المنشور</h4>
+                    <p>
+                        يعلن فوج <strong>القدس</strong> لقدماء الكشافة الإسلامية ببلدية <strong>سيدي داود</strong> عن
+                        فتح باب الانخراط للراغبين في الالتحاق بصفوف الفوج من فتية، قادة وقائدات.
+                        التسجيل يتم عبر الموقع الرسمي للفوج.
+                        مرحّب بالجميع في صفوفنا.
+                    </p>
+
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="action-button primary"
+                    onclick="window.location.href='https://forms.gle/PCqoSjVaShdYwV8E9'">
+                    سجل الآن <i class="fas fa-user-graduate"></i>
+                </button>
+            </div>
+
         </div>
     </div>
 
@@ -3029,6 +3093,10 @@
             <button class="filter-btn" data-filter="training">
                 <i class="fas fa-graduation-cap"></i> التدريبات
             </button>
+            <button class="filter-btn" data-filter="meeting">
+                <i class="fas fa-users"></i> ملتقيات
+            </button>
+
             <button class="filter-btn" data-filter="events">
                 <i class="fas fa-calendar-alt"></i> المناسبات
             </button>
@@ -3885,6 +3953,14 @@
                 category: "community",
                 title: "دورة تحفيظ القرآن",
                 description: "دورة تحفيظ القرآن تحت إشراف القائد: شلال جابر",
+                date: "14 نوفمبر 2025"
+            },
+            {
+                id: 14,
+                src: "images/Réunions.jpg",
+                category: "meeting",
+                title: "اللقاء الأول لمحافظي الأفواج",
+                description: "لقاء محافظي الأفواج بمقر فوج الشهيد أحمد زبانة زعاترة بلدية زموري",
                 date: "14 نوفمبر 2025"
             },
             {
