@@ -26,6 +26,87 @@
     <meta name="author" content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود">
     <meta name="robots" content="index, follow">
 
+    <!-- Structured Data: JSON-LD for Organization + Events -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://imadtbn.github.io/scout-elkouds/#organization",
+      "name": "قدماء الكشافة الإسلامية الجزائرية - فوج القدس - سيدي داود",
+      "alternateName": "فوج القدس - سيدي داود",
+      "url": "https://imadtbn.github.io/scout-elkouds/",
+      "logo": "https://imadtbn.github.io/scout-elkouds/icons/icon.jpg",
+      "description": "قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود. نربي جيلاً يعتز بدينه ويخلص لوطنه ويفخر بانتمائه.",
+      "foundingDate": "1935",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+213541032117",
+          "contactType": "customer service",
+          "areaServed": "DZ",
+          "availableLanguage": ["Arabic"]
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "الطريق الولائي رقم 18 - المكتبة البلدية الشهيد طويلب محمد",
+        "addressLocality": "سيدي داود",
+        "addressRegion": "بومرداس",
+        "addressCountry": "DZ"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=100082879015150"
+      ]
+    },
+
+    {
+      "@type": "Place",
+      "@id": "https://imadtbn.github.io/scout-elkouds/#place",
+      "name": "مقر فوج القدس - سيدي داود",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "الطريق الولائي رقم 18 - المكتبة البلدية الشهيد طويلب محمد",
+        "addressLocality": "سيدي داود",
+        "addressRegion": "بومرداس",
+        "addressCountry": "DZ"
+      }
+    },
+
+    {
+      "@type": "Event",
+      "name": "المخيم الكشفي السنوي",
+      "startDate": "2024-07-11",
+      "description": "المخيم الكشفي السنوي في غابة بوعلام بمشاركة 120 كشافاً.",
+      "location": { "@id": "https://imadtbn.github.io/scout-elkouds/#place" },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "organizer": { "@id": "https://imadtbn.github.io/scout-elkouds/#organization" }
+    },
+
+    {
+      "@type": "Event",
+      "name": "خرجة جبلية استكشافية",
+      "startDate": "2025-04-26",
+      "description": "خرجة استكشافية إلى جبال الأطلس لتعلم مهارات التوجيه.",
+      "location": { "@id": "https://imadtbn.github.io/scout-elkouds/#place" },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "organizer": { "@id": "https://imadtbn.github.io/scout-elkouds/#organization" }
+    },
+
+    {
+      "@type": "Event",
+      "name": "حملة تشجير بيئية",
+      "startDate": "2025-09-13",
+      "description": "حملة تشجير بيئية ضمن أنشطة خدمة المجتمع.",
+      "location": { "@id": "https://imadtbn.github.io/scout-elkouds/#place" },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "organizer": { "@id": "https://imadtbn.github.io/scout-elkouds/#organization" }
+    }
+  ]
+}
+</script>
+
     <style>
         :root {
             /* الألوان الأساسية */
