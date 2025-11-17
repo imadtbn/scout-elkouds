@@ -26,7 +26,7 @@
     <meta name="author" content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود">
     <meta name="robots" content="index, follow">
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
@@ -796,6 +796,43 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
+
+        /* بادج "جديد" */
+        .card-badge.new {
+            top: 15px;
+            /* ارتفاع */
+            right: 15px;
+            /* إزاحة للجهة الأخرى */
+            left: auto;
+            /* تعطيل الوضع القديم */
+            background: var(--green);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            animation: pulse 1.2s infinite ease-in-out;
+        }
+
+        /* حركة خفيفة لجلب الانتباه */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.12);
+                opacity: 0.85;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
 
         /* الخط الزمني */
         .timeline {
@@ -2056,7 +2093,7 @@
             }
 
             #themeToggle {
-                top: 80px;
+                top: 440px;
                 left: 15px;
             }
 
@@ -2391,12 +2428,68 @@
                 <li><a href="#about">عن الكشافة</a></li>
                 <li><a href="#history">التاريخ</a></li>
                 <li><a href="#organization">التنظيم</a></li>
-                <li><a href="#posts">منشورات</a></li>
+                <li><a href="#posts">منشورات وأنشطة</a></li>
                 <li><a href="#activities">الأنشطة</a></li>
                 <li><a href="#gallery">معرض الصور</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
             </ul>
         </nav>
+
+        <!-- زر الإشعارات -->
+        <button id="notifyBtn" aria-label="إشعارات" style="border:none;background:#fff;color:#d40000;border-radius:6px;
+padding:9px 12px;cursor:pointer;position:relative;margin-right:10px;">
+            <i class="fas fa-bell"></i>
+            <span id="notifyBadge" style="position:absolute;top:-4px;right:-4px;background:#ff0;
+    color:#000;padding:2px 6px;border-radius:50%;font-size:0.7em;display:none;">
+                1
+            </span>
+        </button>
+
+        <div id="notifyPanel" style="display:none;position:fixed;bottom:20px;left:20px;background:#fff;
+padding:15px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.2);
+z-index:9999;max-width:280px;border:2px solid #d40000;">
+            <h4 style="margin:0 0 10px;color:#006233;">إشعار جديد</h4>
+            <p id="notifyText" style="margin:0;color:#333;"></p>
+        </div>
+
+        <script>
+            async function checkForNewServices() {
+                const notifyBtn = document.getElementById("notifyBtn");
+                const notifyBadge = document.getElementById("notifyBadge");
+                const notifyPanel = document.getElementById("notifyPanel");
+                const notifyText = document.getElementById("notifyText");
+
+                function showNotification(msg) {
+                    notifyText.textContent = msg;
+                    notifyBadge.style.display = "inline-block";
+                }
+
+                notifyBtn.addEventListener("click", () => {
+                    notifyPanel.style.display =
+                        notifyPanel.style.display === "none" ? "block" : "none";
+                    notifyBadge.style.display = "none";
+                });
+
+                const response = await fetch("services.json");
+                const currentServices = await response.json();
+
+                const saved = localStorage.getItem("servicesList");
+                const savedServices = saved ? JSON.parse(saved) : [];
+
+                const savedIDs = savedServices.map(s => s.id);
+                const newServices = currentServices.filter(s => !savedIDs.includes(s.id));
+
+                if (newServices.length > 0) {
+                    const latest = newServices[newServices.length - 1];
+                    showNotification("تم إضافة خدمة جديدة: " + latest.title);
+                }
+
+                localStorage.setItem("servicesList", JSON.stringify(currentServices));
+            }
+
+            checkForNewServices();
+        </script>
+
 
         <!-- زر الوضع الليلي  -->
         <button id="themeToggle" title="تبديل الوضع">
@@ -2851,6 +2944,7 @@
                 <div class="card-img">
                     <img src="images/Réunions.jpg" loading="lazy" alt="Réunions">
                     <div class="card-badge">نوفمبر 2025</div>
+                    <div class="card-badge new">جديد</div>
                 </div>
                 <div class="card-content">
                     <h3><i class="fas fa-clipboard"></i>ملتقيات</h3>
@@ -2871,6 +2965,7 @@
                 <div class="card-img">
                     <img src="images/quran2.jpg" loading="lazy" alt="quran-memoir">
                     <div class="card-badge">نوفمبر 2025</div>
+                    <div class="card-badge new">جديد</div>
                 </div>
                 <div class="card-content">
                     <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
@@ -2891,6 +2986,7 @@
                 <div class="card-img">
                     <img src="images/inscription.png" loading="lazy" alt="inscription">
                     <div class="card-badge">نوفمبر 2025</div>
+                    <div class="card-badge new">جديد</div>
                 </div>
                 <div class="card-content">
                     <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
@@ -2978,7 +3074,8 @@
                 </div>
             </div>
             <div class="modal-actions">
-                <button class="action-button primary" onclick="window.location.href='https://forms.gle/4Jxwa5cHCH4BJbZQ9'">
+                <button class="action-button primary"
+                    onclick="window.location.href='https://forms.gle/4Jxwa5cHCH4BJbZQ9'">
                     سجل الآن <i class="fas fa-user-graduate"></i>
                 </button>
             </div>
@@ -3471,7 +3568,7 @@
                 <p><a href="#history" style="color: white;">التاريخ</a></p>
                 <p><a href="#organization" style="color: white;">التنظيم</a></p>
                 <p><a href="#activities" style="color: white;">الأنشطة</a></p>
-                <p><a href="#posts" style="color: white;">منشورات</a></p>
+                <p><a href="#posts" style="color: white;">منشورات وأنشطة</a></p>
                 <p><a href="#gallery" style="color: white;">معرض الصور</a></p>
                 <p><a href="#contact" style="color: white;">اتصل بنا</a></p>
                 <p><a href="https://imadtbn.github.io/dz_portal/" target="_blank" style="color: white;">
