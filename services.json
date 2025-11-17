@@ -1,1 +1,10 @@
-services.json
+[
+    {
+        "id": 1,
+        "title": "تسجيلات في تحفيظ القرآن",
+        "description": "افتتاح التسجيلات في دورات تحفيظ القرآن الكريم",
+        "link": "/posts/quran-memoir",
+        "category": "quran-memoir",
+        "updated_at": "2025-11-14"
+    }
+]
