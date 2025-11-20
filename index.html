@@ -2939,6 +2939,72 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
+            <!-- منشور: إعلان نتائج الإنخراط -->
+
+            <!-- 
+<div class="card">
+    <div class="card-img">
+        <img src="images/results.png" loading="lazy" alt="نتائج الإنخراط">
+        <div class="card-badge">نوفمبر 2025</div>
+        <div class="card-badge new">جديد</div>
+    </div>
+    <div class="card-content">
+        <h3><i class="fas fa-clipboard-check"></i> نتائج الإنخراط</h3>
+        <p>الإعلان الرسمي عن النتائج الأولية للمنخرطين في فوج القدس للموسم الكشفي 2026/2025.</p>
+
+        <div class="card-buttons-container">
+            <button class="card-button" data-modal="post-results-modal">
+                تعرف أكثر <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <button class="card-button"
+                onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                مشاركة <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="post-results-modal" class="modal">
+    <div class="modal-content">
+        <button class="close-button">&times;</button>
+
+        <div class="modal-header">
+            <h3 class="modal-title">نتائج الإنخراط</h3>
+            <p class="modal-subtitle">نوفمبر 2025</p>
+        </div>
+
+        <div class="modal-body">
+            <div class="modal-image">
+                <img src="images/results.png" loading="lazy" alt="نتائج الإنخراط">
+            </div>
+
+            <div class="modal-info">
+                <h4>عن الإعلان</h4>
+                <p>
+                    يعلن فوج <strong>القدس</strong> لقدماء الكشافة الإسلامية ببلدية <strong>سيدي داود</strong> 
+                    عن نشر النتائج الأولية للمنخرطين الجدد للموسم <strong>2026/2025</strong>.
+                </p>
+
+                <p>
+                    ندعو جميع المترشحين للاطلاع على النتائج عبر الرابط أدناه، 
+                    مع العلم أنه سيتم الاتصال رسمياً بالناجحين خلال الأيام القادمة لاستكمال الإجراءات الإدارية.
+                </p>
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <button class="action-button primary"
+                onclick="window.location.href='https://docs.google.com/document/d/RESULTS_FILE'">
+                عرض النتائج <i class="fas fa-file-alt"></i>
+            </button>
+        </div>
+    </div>
+</div>
+-->
+
             <!-- منشور 3 -->
             <div class="card">
                 <div class="card-img">
@@ -2969,7 +3035,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 </div>
                 <div class="card-content">
                     <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
-                    <p>إقتتاح تسجيلات حفظ القرآن للموسم 2025/2026.</p>
+                    <p>إقتتاح تسجيلات حفظ القرآن للموسم 2026/2025.</p>
                     <div class="card-buttons-container">
                         <button class="card-button" data-modal="post2-modal">
                             تعرف أكثر <i class="fas fa-arrow-left"></i>
@@ -2990,21 +3056,14 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 </div>
                 <div class="card-content">
                     <h3><i class="fas fa-clipboard"></i> تسجيلات</h3>
-                    <p>إقتتاح التسجيلات الكشفية للموسم 2025/2026.</p>
+                    <p>إقتتاح التسجيلات الكشفية للموسم 2026/2025.</p>
                     <div class="card-buttons-container">
                         <button class="card-button" data-modal="post1-modal">
                             تعرف أكثر <i class="fas fa-arrow-left"></i>
                         </button>
-
-                            <button class="action-button"
-        onclick="sharePost(
-            'فتح باب التسجيلات — فوج القدس',
-            'إعلان افتتاح التسجيلات للموسم الجديد لفوج القدس بسيدي داود.',
-            'https://imadtbn.github.io/scout-elkouds/?post=1',
-            'images/inscription.png'
-        )">
-        مشاركة <i class="fas fa-share-alt"></i>
-    </button> 
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -3013,39 +3072,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <div class="load-more" style="text-align:center; margin-top:30px;">
             <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
         </div>
-
-
     </section>
-
-<script>
-function sharePost(title, text, url, image) {
-
-    // للأجهزة التي تدعم Web Share API
-    if (navigator.share) {
-        navigator.share({
-            title: title,
-            text: text,
-            url: url
-        }).catch(() => {});
-    }
-
-    // إذا لم يكن مدعوم → فتح المشاركة في فيسبوك
-    else {
-        const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-        window.open(fb, "_blank");
-    }
-}
-
-const urlParams = new URLSearchParams(window.location.search);
-const postID = urlParams.get("post");
-if (postID) {
-    const modal = document.getElementById(`post${postID}-modal`);
-    if (modal) modal.classList.add("open");
-}
-
-</script>
-
-
 
 
     <!-- منشور 3: اللقاء الأول لمحافظي الأفواج -->
