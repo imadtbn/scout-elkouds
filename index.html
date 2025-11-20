@@ -2934,10 +2934,33 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         </div>
     </div>
 
-    <!-- منشورات الفوج -->
+    <!-- منشورات وأنشطة الفوج -->
     <section class="section" id="posts">+
-        <h2 class="section-title">منشورات و نشاطات الفوج</h2>
+        <h2 class="section-title">منشورات و أنشطة
+            الفوج</h2>
         <div class="cards-grid">
+
+            <!-- منشور جديد: قوائم المقبولين --> <!-- منشور 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/accepted-scouts.jpg" loading="lazy" alt="accepted-list">
+                    <div class="card-badge">نوفمبر 2025</div>
+                    <div class="card-badge new">جديد</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-clipboard-check"></i> قوائم المقبولين</h3>
+                    <p>إعلان النتائج الرسمية للمقبولين في التسجيلات الكشفية للموسم 2025/2026.</p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="accepted-modal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <!-- منشور 3 -->
             <div class="card">
@@ -3007,8 +3030,44 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
         </div>
 
-
     </section>
+
+    <!-- مودال: قوائم المقبولين --> <!-- منشور 4 -->
+    <div id="accepted-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+
+            <div class="modal-header">
+                <h3 class="modal-title">قوائم المقبولين</h3>
+                <p class="modal-subtitle">نوفمبر 2025</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/accepted-scouts.png" loading="lazy" alt="accepted-list">
+                </div>
+
+                <div class="modal-info">
+                    <h4>عن المنشور</h4>
+                    <p>
+                        يسر فوج <strong>القدس</strong> للكشافة الإسلامية ببلدية <strong>سيدي داود</strong>
+                        الإعلان عن القوائم الرسمية للمقبولين في التسجيلات الكشفية للموسم
+                        <strong>2025/2026</strong>.
+                        نهنئ جميع المقبولين ونتمنى لهم موسماً مفعماً بالنشاط والانضباط الكشفي.
+                    </p>
+
+                    <p>يمكنكم تحميل القوائم كاملة عبر الزر التالي:</p>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="action-button primary" onclick="window.open('files/accepted-list-2025.pdf', '_blank')">
+                    تحميل القوائم <i class="fas fa-file-download"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
 
     <!-- منشور 3: اللقاء الأول لمحافظي الأفواج -->
     <div id="post3-modal" class="modal">
@@ -3106,15 +3165,39 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
                 </div>
             </div>
-            <div class="modal-actions">
-                <button class="action-button primary"
-                    onclick="window.location.href='https://forms.gle/PCqoSjVaShdYwV8E9'">
-                    سجل الآن <i class="fas fa-user-graduate"></i>
-                </button>
-            </div>
+    <!-- زر مشاركة المنشور -->
+    <button class="action-button secondary"
+        onclick="sharePost(
+            'فتح باب التسجيلات — فوج القدس',
+            'إعلان افتتاح التسجيلات للموسم الجديد لفوج القدس بسيدي داود.',
+            'https://imadtbn.github.io/scout-elkouds/#post1',
+            'images/inscription.png'
+        )">
+        مشاركة <i class="fas fa-share-alt"></i>
+    </button>
 
         </div>
     </div>
+
+    <script>
+function sharePost(title, text, url, image) {
+
+    // للأجهزة التي تدعم Web Share API
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            text: text,
+            url: url
+        }).catch(() => {});
+    }
+
+    // إذا لم يكن مدعوم → فتح المشاركة في فيسبوك
+    else {
+        const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        window.open(fb, "_blank");
+    }
+}
+</script>
 
     <!-- قسم الأنشطة -->
     <section class="section" id="activities" style="background: var(--light-red);">
