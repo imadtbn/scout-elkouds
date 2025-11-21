@@ -2935,7 +2935,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
     </div>
 
     <!-- منشورات الفوج -->
-    <section class="section" id="posts">+
+    <section class="section" id="posts">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
@@ -3005,6 +3005,28 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 </div>
 -->
 
+            <!-- منشور 4: ملتقى ولائي لقادة الأفواج -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/ملتقى ولائي.jpg" loading="lazy" alt="Réunions">
+                    <div class="card-badge">نوفمبر 2025</div>
+                    <div class="card-badge new">جديد</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-handshake"></i>مشاركة</h3>
+                    <p>مشاركة قادة فوج <strong>القدس</strong> لقدماء الكشافة الجزائرية في الملتقى الولائي للاطارات
+                        الكشفية </p>
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="post4-modal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- منشور 3 -->
             <div class="card">
                 <div class="card-img">
@@ -3013,7 +3035,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <div class="card-badge new">جديد</div>
                 </div>
                 <div class="card-content">
-                    <h3><i class="fas fa-clipboard"></i>ملتقيات</h3>
+                    <h3><i class="fas fa-users"></i>ملتقيات</h3>
                     <p>اللقاء الأول لمحافظي الأفواج تحت شعار: أفواجنا الكشفية ..قُوتنا</p>
                     <div class="card-buttons-container">
                         <button class="card-button" data-modal="post3-modal">
@@ -3073,6 +3095,42 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
         </div>
     </section>
+
+    <!-- منشور 4: ملتقى ولائي لقادة الأفواج -->
+    <div id="post4-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+
+            <div class="modal-header">
+                <h3 class="modal-title">الملتقى الولائي للاطارات الكشفية</h3>
+                <p class="modal-subtitle">21 نوفمبر 2025</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/ملتقى ولائي1.jpg" loading="lazy" alt="Réunions">
+                </div>
+
+                <div class="modal-info">
+                    <h4>عن المنشور</h4>
+                    <p>
+                        شارك مساء اليوم الجمعة 21 نوفمبر 2025 قادة فوج <strong>القدس</strong> ببلدية <strong>سيدي
+                            داود</strong> في الملتقى الولائي للإطارات الكشفية <strong>ببومرداس</strong> تحت شعار:
+                        نلتقي.. لنرتقي
+                    </p>
+
+                    <p>#فوج_القدس_سيدي_داود</p>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="action-button primary" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                    شارك الآن <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- منشور 3: اللقاء الأول لمحافظي الأفواج -->
