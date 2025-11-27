@@ -19,14 +19,14 @@
     <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NKN85LGVRY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKN85LGVRY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-NKN85LGVRY');
-</script>
+        gtag('config', 'G-NKN85LGVRY');
+    </script>
 
     <meta name="description"
         content="قدماء الكشافة الإسلامية الجزائرية - فوج القدس سيدي داود. نربي جيلاً يعتز بدينه ويخلص لوطنه ويفخر بانتمائه من خلال أنشطة كشفية تربوية ووطنية.">
@@ -3341,12 +3341,19 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             </div>
 
             <!-- الأنشطة القادمة -->
-            <div class="upcoming-events">
+
+                        <!--
+                        <div class="upcoming-events">
                 <h3 class="upcoming-title"><i class="fas fa-list"></i> الأنشطة القادمة</h3>
                 <div class="events-list" id="upcoming-events-list">
                     <!-- سيتم ملء الأنشطة عبر JavaScript -->
                 </div>
             </div>
+            
+            -->
+
+
+            
         </div>
     </section>
 
@@ -3964,12 +3971,22 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     description: 'وضع إكليل من الزهور على أرواح الشعداء + عرض وثائقي وتلاوة النشيد الوطني تكريما لشهداء الثورة.',
                     type: 'نشاط وطني'
                 },
+                28: {
+                    title: 'إستئناف حصص الكشفية',
+                    time: '15:00زوالا',
+                    location: 'مقر الفوج المكتبة المركزية - سيدي داود',
+                    participants: 'القيادة الفتية',
+                    leader: 'القائد سعيد + محمد',
+                    description: 'إستئناف حصص الكشفية، الإلتحاق بمقر الفوج بالمكتبة المركزية بسيدي داود على ساعة 15:00 مساء.',
+                    type: 'اللقاء الأول'
+                },
             }
         };
 
 
         // بيانات الأنشطة القادمة
-        const upcomingEvents = [
+
+const upcomingEvents = [
             {
                 date: '2025-10-31',
                 title: 'رفع العلم الوطني',
@@ -3988,6 +4005,8 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 leader: 'القائد محمد'
             },
         ];
+
+
 
         let currentDate = new Date(); // الشهر الحالي ديناميكيًا
 
