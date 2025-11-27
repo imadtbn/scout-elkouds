@@ -14,5 +14,13 @@
         "link": "/posts/quran-memoir",
         "category": "quran-memoir",
         "updated_at": "2025-11-14"
+    },
+        {
+        "id": 3,
+        "title": "إعلان نتائج القبول في الفوج",
+        "description": "إعلان نتائج القبول في فوج القدس لموسم 2026/2025",
+        "link": "/posts/results",
+        "category": "results",
+        "updated_at": "2025-11-27"
     }
 ]
