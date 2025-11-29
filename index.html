@@ -2339,6 +2339,34 @@
                 height: 200px;
             }
         }
+
+        .modal-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .modal-list li {
+            position: relative;
+            padding-right: 28px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .modal-list li::before {
+            content: "\f00c";
+            /* أيقونة صح */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 2px;
+            font-size: 0.9rem;
+            color: var(--green);
+        }
     </style>
 
     <script>
@@ -2500,12 +2528,10 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             checkForNewServices();
         </script>
 
-
         <!-- زر الوضع الليلي  -->
         <button id="themeToggle" title="تبديل الوضع">
             <i class="fas fa-moon"></i>
         </button>
-
     </header>
 
     <!-- القسم الرئيسي  -->
@@ -2564,6 +2590,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 </div>
             </div>
 
+
             <div class="card">
                 <div class="card-img">
                     <img src="images/message.jpg" loading="lazy" alt="رسالة الكشافة">
@@ -2598,63 +2625,81 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
     <!-- النوافذ المنبثقة -->
     <div id="vision-modal" class="modal">
         <div class="modal-content">
-            <button class="close-button">&times;</button>
-            <h3 class="modal-title">رؤية الكشافة الإسلامية الجزائرية</h3>
-            <p class="modal-text">تسعى الكشافة الإسلامية الجزائرية إلى تكوين جيل من الشباب الجزائري:</p>
-            <ul class="modal-list">
-                <li>معتز بهويته الإسلامية والوطنية</li>
-                <li>مستعد لخدمة مجتمعه ووطنه في كل الظروف</li>
-                <li>قادر على تحمل المسؤولية واتخاذ القرارات</li>
-                <li>ملتزم بالقيم الإسلامية والأخلاق الفاضلة</li>
-                <li>متفاعل إيجابياً مع متطلبات العصر</li>
-                <li>مشارك بفعالية في بناء وتنمية المجتمع</li>
-            </ul>
-            <p class="modal-text">تسعى الكشافة لتحقيق هذه الرؤية من خلال برامج وأنشطة تربوية متكاملة تستهدف جميع
-                الجوانب
-                الشخصية للشباب.</p>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/rouia.jpg" loading="lazy" alt="رؤية الكشافة">
+                </div>
+                <div class="modal-info">
+                    <p class="modal-text">تسعى الكشافة الإسلامية الجزائرية إلى تكوين جيل من الشباب الجزائري:</p>
+                    <ul class="modal-list">
+                        <li><strong>الهوية:</strong> معتز بهويته الإسلامية والوطنية</li>
+                        <li><strong>الخدمة:</strong> مستعد لخدمة مجتمعه ووطنه في كل الظروف</li>
+                        <li><strong>المسؤولية:</strong> قادر على تحمل المسؤولية واتخاذ القرارات</li>
+                        <li><strong>الأخلاق:</strong> ملتزم بالقيم الإسلامية والأخلاق الفاضلة</li>
+                        <li><strong>العصرنة:</strong> متفاعل إيجابياً مع متطلبات العصر</li>
+                        <li><strong>المشاركة:</strong> مشارك بفعالية في بناء وتنمية المجتمع</li>
+                    </ul>
+                    <p class="modal-text">
+                        تسعى الكشافة لتحقيق هذه الرؤية من خلال برامج وأنشطة تربوية متكاملة تستهدف جميع الجوانب الشخصية
+                        للشباب.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="mission-modal" class="modal">
         <div class="modal-content">
-            <button class="close-button">&times;</button>
-            <h3 class="modal-title">رسالة الكشافة الإسلامية الجزائرية</h3>
-            <p class="modal-text">تلتزم الكشافة الإسلامية الجزائرية بتربية الشباب تربية متكاملة تشمل:</p>
-            <ul class="modal-list">
-                <li><strong>التربية الروحية:</strong> تعزيز الإيمان والقيم الإسلامية</li>
-                <li><strong>التربية الخلقية:</strong> تنمية الأخلاق الفاضلة والسلوك القويم</li>
-                <li><strong>التربية الجسمية:</strong> تعزيز الصحة واللياقة البدنية</li>
-                <li><strong>التربية العقلية:</strong> تنمية التفكير النقدي والإبداعي</li>
-                <li><strong>التربية الاجتماعية:</strong> تعزيز روح التعاون والمواطنة</li>
-                <li><strong>التربية الكشفية:</strong> اكتساب المهارات الحياتية والقيادية</li>
-            </ul>
-            <p class="modal-text">تهدف هذه التربية إلى إعداد مواطنين صالحين قادرين على المساهمة الفعالة في بناء
-                الوطن.
-            </p>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/message.jpg" loading="lazy" alt="رسالة الكشافة">
+                </div>
+                <div class="modal-info">
+                    <p class="modal-text">تلتزم الكشافة الإسلامية الجزائرية بتربية الشباب تربية متكاملة تشمل:</p>
+                    <ul class="modal-list">
+                        <li><strong>التربية الروحية:</strong> تعزيز الإيمان والقيم الإسلامية</li>
+                        <li><strong>التربية الخلقية:</strong> تنمية الأخلاق الفاضلة والسلوك القويم</li>
+                        <li><strong>التربية الجسمية:</strong> تعزيز الصحة واللياقة البدنية</li>
+                        <li><strong>التربية العقلية:</strong> تنمية التفكير النقدي والإبداعي</li>
+                        <li><strong>التربية الاجتماعية:</strong> تعزيز روح التعاون والمواطنة</li>
+                        <li><strong>التربية الكشفية:</strong> اكتساب المهارات الحياتية والقيادية</li>
+                    </ul>
+                    <p class="modal-text">
+                        تهدف هذه التربية إلى إعداد مواطنين صالحين قادرين على المساهمة الفعالة في بناء الوطن.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="values-modal" class="modal">
         <div class="modal-content">
-            <button class="close-button">&times;</button>
-            <h3 class="modal-title">قيم الكشافة الإسلامية الجزائرية</h3>
-            <p class="modal-text">تستند الكشافة الإسلامية الجزائرية إلى مجموعة من القيم الأساسية التي توجه عملها
-                وسلوك
-                أفرادها:</p>
-            <ul class="modal-list">
-                <li><strong>الدين:</strong> الالتزام بتعاليم الإسلام السمحة وقيمه</li>
-                <li><strong>الوطن:</strong> حب الجزائر والتفاني في خدمتها</li>
-                <li><strong>الانضباط:</strong> الالتزام بالنظام والقوانين</li>
-                <li><strong>التعاون:</strong> العمل الجماعي وروح الفريق</li>
-                <li><strong>المسؤولية:</strong> تحمل تبعات الأفعال والقرارات</li>
-                <li><strong>الصدق:</strong> الصراحة والنزاهة في القول والعمل</li>
-                <li><strong>الاحترام:</strong> تقدير الذات والآخرين</li>
-                <li><strong>خدمة المجتمع:</strong> المساهمة في تنمية وتحسين المجتمع</li>
-                <li><strong>التضامن:</strong> الوقوف إلى جانب المحتاجين</li>
-                <li><strong>الكفاح:</strong> المثابرة والعمل الجاد لتحقيق الأهداف</li>
-            </ul>
-            <p class="modal-text">تسعى الكشافة إلى ترسيخ هذه القيم في نفوس الشباب من خلال الممارسة العملية والقدوة
-                الحسنة.</p>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/kiyam.jpg" loading="lazy" alt="قيم الكشافة">
+                </div>
+                <div class="modal-info">
+                    <p class="modal-text">
+                        تستند الكشافة الإسلامية الجزائرية إلى مجموعة من القيم الأساسية التي توجه عملها وسلوك أفرادها:
+                    </p>
+                    <ul class="modal-list">
+                        <li><strong>الدين:</strong> الالتزام بتعاليم الإسلام السمحة وقيمه</li>
+                        <li><strong>الوطن:</strong> حب الجزائر والتفاني في خدمتها</li>
+                        <li><strong>الانضباط:</strong> الالتزام بالنظام والقوانين</li>
+                        <li><strong>التعاون:</strong> العمل الجماعي وروح الفريق</li>
+                        <li><strong>المسؤولية:</strong> تحمل تبعات الأفعال والقرارات</li>
+                        <li><strong>الصدق:</strong> الصراحة والنزاهة في القول والعمل</li>
+                        <li><strong>الاحترام:</strong> تقدير الذات والآخرين</li>
+                        <li><strong>خدمة المجتمع:</strong> المساهمة في تنمية وتحسين المجتمع</li>
+                        <li><strong>التضامن:</strong> الوقوف إلى جانب المحتاجين</li>
+                        <li><strong>الكفاح:</strong> المثابرة والعمل الجاد لتحقيق الأهداف</li>
+                    </ul>
+                    <p class="modal-text">
+                        تسعى الكشافة إلى ترسيخ هذه القيم في نفوس الشباب من خلال الممارسة العملية والقدوة الحسنة.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -2754,6 +2799,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     </button>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-img">
                     <img src="images/mobile.jpg" loading="lazy" alt="مرحلة الجوالة">
@@ -2793,7 +2839,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <h4>عن المرحلة</h4>
                     <p>مرحلة الأشبال هي البوابة الأولى للانضمام إلى عالم الكشافة، حيث يتعلم الأطفال المبادئ الأساسية
                         والقيم الكشفية في بيئة آمنة وممتعة.</p>
-
                     <h4>الأهداف التربوية</h4>
                     <ul class="modal-features">
                         <li>تنمية الاعتماد على النفس</li>
@@ -2835,7 +2880,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <p>مرحلة الكشافة هي مرحلة التطبيق العملي للمبادئ الكشفية، حيث يبدأ الشباب في تحمل المسؤوليات
                         وتطوير
                         مهاراتهم القيادية.</p>
-
                     <h4>الأهداف التربوية</h4>
                     <ul class="modal-features">
                         <li>تطوير المهارات القيادية</li>
@@ -2877,7 +2921,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <p>مرحلة المتقدمون هي مرحلة التخصص والتميز، حيث يتحمل الشباب مسؤوليات قيادية ويطورون مهارات
                         متخصصة
                         في مجالات مختلفة.</p>
-
                     <h4>الأهداف التربوية</h4>
                     <ul class="modal-features">
                         <li>التخصص في مجالات كشفية محددة</li>
@@ -2919,7 +2962,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <p>مرحلة الجوالة هي قمة الهرم الكشفي، حيث يصبح الفرد قائداً ومعلماً ومرشداً للأجيال، ويساهم في
                         تطوير
                         الحركة الكشفية والمجتمع.</p>
-
                     <h4>الأهداف التربوية</h4>
                     <ul class="modal-features">
                         <li>القيادة والإشراف على المستويات المختلفة</li>
@@ -3133,28 +3175,22 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 <h3 class="modal-title">تهنئة للفائزين في قرعة الحج للموسم 1448/2026</h3>
                 <p class="modal-subtitle">22 نوفمبر 2025</p>
             </div>
-
             <div class="modal-body">
                 <div class="modal-image">
                     <img src="images/haram.jpg" loading="lazy" alt="haram">
                 </div>
-
                 <div class="modal-info">
                     <h4>عن المنشور</h4>
-
                     <p>
                         يتشرف <strong>قدماء الكشافة الإسلامية الجزائرية – فوج القدس بسيدي داود</strong> بتهنئة الفائزين
                         في <strong>قرعة الحج للموسم 1447/2026</strong>.
                     </p>
-
                     <p>
                         نسأل الله أن يكتب لكم حجًا مبرورًا، وسعيًا مشكورًا، وذنبًا مغفورًا بإذنه تعالى.
                     </p>
-
                     <p>
                         ولمن لم يحالفه الحظ، نسأل الله أن يرزقكم فرصة الحج في القرعة القادمة بإذن الله.
                     </p>
-
                     <blockquote class="verse" cite="https://quran.com/3/97" aria-label="آية: و لله على الناس حج البيت">
                         <strong>﴿وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلاً ۚ وَمَنْ
                             كَفَرَ
@@ -3164,7 +3200,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
                     <div class="meta" aria-hidden="true">✔️ نتمنى للجميع التوفيق والسلامة</div>
                 </div>
-
                 <p>#فوج_القدس_سيدي_داود</p>
             </div>
         </div>
@@ -3174,7 +3209,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 شارك الآن <i class="fas fa-share-alt"></i>
             </button>
         </div>
-
     </div>
     </div>
 
@@ -3187,12 +3221,10 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 <h3 class="modal-title">الملتقى الولائي للاطارات الكشفية</h3>
                 <p class="modal-subtitle">21 نوفمبر 2025</p>
             </div>
-
             <div class="modal-body">
                 <div class="modal-image">
                     <img src="images/ملتقى ولائي1.jpg" loading="lazy" alt="Réunions">
                 </div>
-
                 <div class="modal-info">
                     <h4>عن المنشور</h4>
                     <p>
@@ -3200,17 +3232,14 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                             داود</strong> في الملتقى الولائي للإطارات الكشفية <strong>ببومرداس</strong> تحت شعار:
                         نلتقي.. لنرتقي
                     </p>
-
                     <p>#فوج_القدس_سيدي_داود</p>
                 </div>
             </div>
-
             <div class="modal-actions">
                 <button class="action-button primary" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
                     شارك الآن <i class="fas fa-share-alt"></i>
                 </button>
             </div>
-
         </div>
     </div>
 
@@ -3223,12 +3252,10 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 <h3 class="modal-title">اللقاء الأول لمحافظي الأفواج</h3>
                 <p class="modal-subtitle">14 نوفمبر 2025</p>
             </div>
-
             <div class="modal-body">
                 <div class="modal-image">
                     <img src="images/Réunions.jpg" loading="lazy" alt="Réunions">
                 </div>
-
                 <div class="modal-info">
                     <h4>عن المنشور</h4>
                     <p>
@@ -3240,7 +3267,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <p>#فوج_القدس_سيدي_داود</p>
                 </div>
             </div>
-
             <div class="modal-actions">
                 <button class="action-button primary" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
                     شارك الآن <i class="fas fa-share-alt"></i>
@@ -3274,7 +3300,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     <p>
                         تحت إشراف القائد: <strong>شلال جابر</strong>
                     </p>
-
                 </div>
             </div>
             <div class="modal-actions">
@@ -3283,7 +3308,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     سجل الآن <i class="fas fa-user-graduate"></i>
                 </button>
             </div>
-
         </div>
     </div>
 
@@ -3307,7 +3331,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                         التسجيل يتم عبر الموقع الرسمي للفوج.
                         مرحّب بالجميع في صفوفنا.
                     </p>
-
                 </div>
             </div>
             <div class="modal-actions">
@@ -3316,7 +3339,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     سجل الآن <i class="fas fa-user-graduate"></i>
                 </button>
             </div>
-
         </div>
     </div>
 
@@ -3342,18 +3364,15 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
             <!-- الأنشطة القادمة -->
 
-                        <!--
+            <!--
                         <div class="upcoming-events">
                 <h3 class="upcoming-title"><i class="fas fa-list"></i> الأنشطة القادمة</h3>
                 <div class="events-list" id="upcoming-events-list">
                     <!-- سيتم ملء الأنشطة عبر JavaScript -->
-                </div>
-            </div>
-            
-            -->
+        </div>
+        </div>
 
-
-            
+        -->
         </div>
     </section>
 
@@ -3439,7 +3458,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="filter-btn" data-filter="meeting">
                 <i class="fas fa-users"></i> ملتقيات
             </button>
-
             <button class="filter-btn" data-filter="events">
                 <i class="fas fa-calendar-alt"></i> المناسبات
             </button>
@@ -3449,7 +3467,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="filter-btn" data-filter="gallery">
                 <i class="fas fa-images"></i> معرض
             </button>
-
         </div>
 
         <!-- شبكة الصور -->
@@ -3779,7 +3796,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 <p><a href="#history" style="color: white;">التاريخ</a></p>
                 <p><a href="#organization" style="color: white;">التنظيم</a></p>
                 <p><a href="#posts" style="color: white;">منشورات وأنشطة</a></p>
-                <p><a href="#activities" style="color: white;">برنامج الأنشطة/a></p>
+                <p><a href="#activities" style="color: white;">برنامج الأنشطة</a></p>
                 <p><a href="#gallery" style="color: white;">معرض الصور</a></p>
                 <p><a href="#contact" style="color: white;">اتصل بنا</a></p>
                 <p><a href="https://imadtbn.github.io/dz_portal/" target="_blank" style="color: white;">
@@ -3986,7 +4003,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
         // بيانات الأنشطة القادمة
 
-const upcomingEvents = [
+        const upcomingEvents = [
             {
                 date: '2025-10-31',
                 title: 'رفع العلم الوطني',
