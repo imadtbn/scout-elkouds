@@ -8,14 +8,14 @@
   "description": "نربي جيلاً يعتز بدينه ويخلص لوطنه ويفخر بانتمائه من خلال أنشطة كشفية تربوية ووطنية.",
   "icons": [
     {
-      "src": "icons/scout-logo.png",
+      "src": "icons/icon.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
-      "src": "icons/scout-logo.png",
+      "src": "icons/icon.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ]
 }
