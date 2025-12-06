@@ -2991,6 +2991,64 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/volunteer2.jpg" loading="lazy" alt="اليوم العالمي للتطوع">
+                    <div class="card-badge">ديسمبر 2025</div>
+                    <div class="card-badge new">هــام</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-hands-helping"></i> اليوم العالمي للتطوع</h3>
+                    <p>
+                        يحتفي فوج القدس سيدي داود لقدماء الكشافة الإسلامية الجزائرية باليوم العالمي للتطوع، مناسبة
+                        نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة.
+                    </p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="volunteerDayModal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/)">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نافذة منبثقة للتفاصيل -->
+            <div id="volunteerDayModal" class="modal">
+                <div class="modal-content">
+                    <button class="close-button">&times;</button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">اليوم العالمي للتطوع</h3>
+                        <p class="modal-subtitle">05 ديسمبر 2025</p>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <img src="images/volunteer.jpg" loading="lazy" alt="اليوم العالمي للتطوع">
+                        </div>
+
+                        <div class="modal-info">
+                            <h4>عن المناسبة</h4>
+                            <p>
+                                إن العمل التطوعي كان ولا يزال ركيزة أساسية في رسالتنا الكشفية، نجسده ميدانيًا عبر مختلف
+                                الأنشطة الإنسانية، البيئية، التضامنية، والتوعوية، التي تهدف إلى خدمة الوطن والمواطن بكل
+                                إخلاص ومسؤولية.<br><br>
+                                يتقدّم محافظ الفوج #بن_عاشور_عبيدة بخالص التحية والتقدير لكل القادة والقائدات، الجوالة،
+                                الكشاف والأشبال، الزهرات، والمرشدات ودليلات الذين صنعوا الفارق بتفانيهم وجهودهم على مدار
+                                السنة، مؤكدين أنّ التطوع ليس عملًا عابرًا، بل أسلوب حياة.<br><br>
+                                كل عام وقدماء الكشافة الإسلامية الجزائرية قدوة في التطوع.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
             <!-- منشور6: إعلان نتائج الإنخراط -->
             <div class="card">
                 <div class="card-img">
@@ -4221,7 +4279,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
     <!-- معرض الضوء -->
     <script>
-        // بيانات الصور من مكتبة Unsplash
+        // بيانات الصور من مكتبة 
         const galleryImages = [
             {
                 id: 1,
@@ -4342,7 +4400,31 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 title: "إحياء ذكرى تأسيس الكشافةالجزائرية",
                 description: "إحياء ذكرى  تأسيس الكشافةالجزائرية بدار الشباب",
                 date: "27 ماي 2023"
-            }
+            },
+            {
+                id: 16,
+                src: "images/volunteer.jpg",
+                category: "events",
+                title: "اليوم العالمي للتطوع",
+                description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+                date: "05 ديسمبر 2025"
+            },
+            {
+                id: 17,
+                src: "images/volunteer1.jpg",
+                category: "events",
+                title: "اليوم العالمي للتطوع",
+                description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+                date: "05 ديسمبر 2025"
+            },
+            {
+                id: 18,
+                src: "images/volunteer2.jpg",
+                category: "events",
+                title: "اليوم العالمي للتطوع",
+                description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+                date: "05 ديسمبر 2025"
+            },
         ];
 
         let currentFilter = 'all';
@@ -4491,6 +4573,47 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 }
             });
         }
+
+        // تحويل التواريخ من نص إلى كائن Date للفرز
+        function parseDate(dateStr) {
+            // تحويل الأشهر العربية إلى أرقام
+            const months = {
+                "جانفي": 0, "فيفري": 1, "مارس": 2, "أفريل": 3, "ماي": 4,
+                "جوان": 5, "جويلية": 6, "أوت": 7, "سبتمبر": 8, "أكتوبر": 9,
+                "نوفمبر": 10, "ديسمبر": 11
+            };
+
+            // تقسيم اليوم والشهر والسنة
+            const parts = dateStr.trim().split(" ");
+            if (parts.length !== 3) return new Date(); // fallback
+            const day = parseInt(parts[0]);
+            const month = months[parts[1]] ?? 0;
+            const year = parseInt(parts[2]);
+            return new Date(year, month, day);
+        }
+
+        // ترتيب المصفوفة من الأحدث إلى الأقدم
+        const sortedGallery = galleryImages.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
+        // إنشاء معرض الصور ديناميكيًا
+        const galleryContainer = document.querySelector(".gallery-grid"); // حدد الحاوية
+        galleryContainer.innerHTML = "";
+
+        sortedGallery.forEach(img => {
+            const card = document.createElement("div");
+            card.classList.add("gallery-item");
+            card.innerHTML = `
+        <img src="${img.src}" alt="${img.title}" loading="lazy">
+        <div class="gallery-overlay">
+            <span class="gallery-category">${img.category}</span>
+            <h4 class="gallery-title">${img.title}</h4>
+            <span class="gallery-date"><i class="fas fa-calendar"></i> ${img.date}</span>
+            <p>${img.description}</p>
+        </div>
+    `;
+            galleryContainer.appendChild(card);
+        });
+
 
         // تهيئة المعرض عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', initGallery);
