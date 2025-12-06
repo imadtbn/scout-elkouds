@@ -2532,6 +2532,9 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <button id="themeToggle" title="تبديل الوضع">
             <i class="fas fa-moon"></i>
         </button>
+
+
+
     </header>
 
     <!-- القسم الرئيسي  -->
@@ -2545,6 +2548,10 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
             <button class="cta-button secondary-btn" id="learnMoreBtn">
                 تعرف أكثر <i class="fas fa-info-circle"></i>
+            </button>
+
+            <button id="installBtn" class="cta-button" style="position:fixed;bottom:80px;left:20px;z-index:999;">
+                تثبيت الموقع <i class="fas fa-download"></i>
             </button>
 
         </div>
@@ -4712,6 +4719,37 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
     </script>
 
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js")
+                .then(() => console.log("Service Worker مسجّل بنجاح"))
+                .catch(err => console.error("Service Worker فشل في التسجيل:", err));
+        }
+    </script>
+
+    <script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = "inline-flex"; // إظهار الزر داخل hero
+});
+
+installBtn.addEventListener("click", async () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === "accepted") {
+            console.log("تم تثبيت التطبيق");
+        }
+        deferredPrompt = null;
+        installBtn.style.display = "none";
+    }
+});
+
+    </script>
 </body>
 
 </html>
