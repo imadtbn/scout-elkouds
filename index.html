@@ -2549,10 +2549,11 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="cta-button secondary-btn" id="learnMoreBtn">
                 تعرف أكثر <i class="fas fa-info-circle"></i>
             </button>
-
-            <button id="installBtn" class="cta-button" style="position:fixed;bottom:80px;left:20px;z-index:999;">
+            <!--
+ <button id="installBtn" class="cta-button" style="position:fixed;bottom:80px;left:20px;z-index:999;">
                 تثبيت الموقع <i class="fas fa-download"></i>
-            </button>
+            </button>           
+-->
 
         </div>
     </section>
@@ -2998,6 +2999,60 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
+            <!-- بطاقة تحية لروضة واحة الطفل -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/kids-garden.jpg" loading="lazy" alt="روضة واحة الطفل - سيدي داود">
+                    <div class="card-badge">ديسمبر 2025</div>
+                    <div class="card-badge new">مميز</div>
+                </div>
+
+                <div class="card-content">
+                    <h3><i class="fas fa-child"></i> تحية لروضة واحة الطفل</h3>
+                    <p>
+                        تحية تقدير لروضة واحة الطفل ببلدية سيدي داود على نشر برامج تربوية هادفة
+                        تسهم في تنمية الروح الوطنية لدى الجيل الصاعد تحت إشراف أساتذة الروضة.
+                    </p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="kidsGardenModal">
+                            عرض الفيديو <i class="fas fa-arrow-left"></i>
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة: انطلاق امتحانات الثلاثي الأول -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/دعاء.jpg" loading="lazy" alt="انطلاق امتحانات الثلاثي الأول">
+                    <div class="card-badge">ديسمبر 2025</div>
+                    <div class="card-badge new">هــام</div>
+                </div>
+
+                <div class="card-content">
+                    <h3><i class="fas fa-book"></i> انطلاق امتحانات الثلاثي الأول</h3>
+                    <p>
+                        انطلاق امتحانات الثلاثي الأول اليوم الأحد 07 ديسمبر 2025.
+                        نتمنى كل التوفيق والنجاح لبناتنا وأبنائنا.
+                    </p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="examModal">
+                            عرض التفاصيل <i class="fas fa-arrow-left"></i>
+                        </button>
+
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- اليوم العالمي للتطوع -->
             <div class="card">
                 <div class="card-img">
                     <img src="images/volunteer2.jpg" loading="lazy" alt="اليوم العالمي للتطوع">
@@ -3230,6 +3285,78 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
         </div>
     </section>
+
+    <!-- نافذة منبثقة: فيديو روضة واحة الطفل -->
+    <div id="kidsGardenModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+
+            <div class="modal-header">
+                <h3 class="modal-title">برامج روضة واحة الطفل</h3>
+                <p class="modal-subtitle">فيديو من الصفحة الرسمية</p>
+            </div>
+
+            <div class="modal-body">
+
+                <!-- فيديو فيسبوك مدمج -->
+                <div class="modal-video" style="width:100%; text-align:center;">
+                    <iframe
+                        src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1563084618052320&show_text=false"
+                        width="100%" height="380" style="border:none;overflow:hidden;border-radius:10px;" scrolling="no"
+                        frameborder="0" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+
+                <div class="modal-info">
+                    <h4>عن المبادرة</h4>
+                    <p>
+                        تعمل روضة واحة الطفل على تقديم برامج تربوية وتعليمية هادفة تغرس في الأطفال
+                        حب الوطن، الانضباط، التعاون، والاعتماد على النفس، تحت إشراف نخبة من أساتذة الروضة.
+                    </p>
+                    <p>
+                        مبادرة تساهم في بناء جيل واعٍ ومسؤول، يحمل القيم الوطنية الأصيلة.
+                    </p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:10px;">
+                <button class="action-button primary"
+                    onclick="window.open('https://www.facebook.com/profile.php?id=100069385759871', '_blank')"
+                    style="display:inline-flex; align-items:center; gap:6px;">
+                    تواصل مع الروضة
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة منبثقة: انطلاق امتحانات الثلاثي الأول -->
+    <div id="examModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+
+            <div class="modal-header">
+                <h3 class="modal-title">انطلاق امتحانات الثلاثي الأول</h3>
+                <p class="modal-subtitle">07 ديسمبر 2025</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/دعاء2.jpg" loading="lazy" alt="امتحانات الثلاثي الأول">
+                </div>
+
+                <div class="modal-info">
+                    <h4>تفاصيل</h4>
+                    <p>
+                        بمناسبة انطلاق امتحانات الثلاثي الأول اليوم الأحد 07 ديسمبر 2025،
+                        نتمنى كل التوفيق والنجاح لبناتنا وأبنائنا في امتحاناتهم.
+                        ندعو الله أن ييسر عليهم الأسئلة ويكتب لهم النجاح والسداد.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- منشور5: تهنئة الحج -->
     <div id="post5-modal" class="modal">
@@ -4728,26 +4855,26 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
     </script>
 
     <script>
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
+        let deferredPrompt;
+        const installBtn = document.getElementById("installBtn");
 
-window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installBtn.style.display = "inline-flex"; // إظهار الزر داخل hero
-});
+        window.addEventListener("beforeinstallprompt", (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = "inline-flex"; // إظهار الزر داخل hero
+        });
 
-installBtn.addEventListener("click", async () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === "accepted") {
-            console.log("تم تثبيت التطبيق");
-        }
-        deferredPrompt = null;
-        installBtn.style.display = "none";
-    }
-});
+        installBtn.addEventListener("click", async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === "accepted") {
+                    console.log("تم تثبيت التطبيق");
+                }
+                deferredPrompt = null;
+                installBtn.style.display = "none";
+            }
+        });
 
     </script>
 </body>
