@@ -2999,6 +2999,33 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
+   <!-- بطاقة: تهنئة -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/doctorate.jpg" loading="lazy" alt="تهنئة تخرج الدكتوراه">
+                    <div class="card-badge">ديسمبر 2025</div>
+                    <div class="card-badge new">جديد</div>
+                </div>
+
+                <div class="card-content">
+                    <h3><i class="fas fa-user-graduate"></i> تهنئة تخرج دكتوراه</h3>
+                    <p>
+                        يتقدم فوج القدس سيدي داود بأسمى عبارات التهاني والتبريكات
+                        للأستاذ توكال عبد النور بمناسبة نيل درجة الدكتوراه.
+                    </p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="doctorateModal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- بطاقة تحية لروضة واحة الطفل -->
             <div class="card">
                 <div class="card-img">
@@ -3050,7 +3077,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     </div>
                 </div>
             </div>
-
 
             <!-- اليوم العالمي للتطوع -->
             <div class="card">
@@ -3109,7 +3135,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
                 </div>
             </div>
-
 
             <!-- منشور6: إعلان نتائج الإنخراط -->
             <div class="card">
@@ -3286,7 +3311,46 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         </div>
     </section>
 
-    <!-- نافذة منبثقة: فيديو روضة واحة الطفل -->
+   <!-- نافذة منبثقة: تهنئة -->
+    <div id="doctorateModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+
+            <div class="modal-header">
+                <h3 class="modal-title">تهنئة تخرج دكتوراه</h3>
+                <p class="modal-subtitle">ديسمبر 2025</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/doctorate1.jpg" loading="lazy" alt="تهنئة تخرج الدكتوراه">
+                </div>
+
+                <div class="modal-info">
+                    <h4>مناسبة التهنئة</h4>
+                    <p>
+                        ﴿ يرفع الله الذين آمنوا منكم والذين أوتوا العلم درجات والله بما تعملون خبير ﴾ <br><br>
+
+                        يتقدم <strong>فوج القدس سيدي داود</strong> إلى رئيس البلدية
+                        <strong>الأستاذ الدكتور: توكال عبد النور</strong>
+                        بأسمى التهاني وأصدق التبريكات بمناسبة النجاح المشرف في مناقشة أطروحة الدكتوراه بكلية التكنولوجيا
+                        تحت إشراف البروفيسور قادري محمد. <br><br>
+
+                        إنجاز مشرّف يرفع اسم البلدية ويزيد رصيدها العلمي، ويعكس مسارًا مكللًا بالجد والاجتهاد والمثابرة.
+                        هنيئًا لك هذا التفوق… وعقبال المزيد من النجاحات العلمية والعملية.
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="action-button primary" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                    مشاركة <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+   <!-- نافذة منبثقة: فيديو روضة واحة الطفل -->
     <div id="kidsGardenModal" class="modal">
         <div class="modal-content">
             <button class="close-button">&times;</button>
