@@ -270,6 +270,15 @@
             transition: var(--transition);
         }
 
+        .header {
+            transition: transform 0.3s ease;
+        }
+
+        .header.hide {
+            transform: translateY(-100%);
+        }
+
+
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -2999,7 +3008,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
-   <!-- بطاقة: تهنئة -->
+            <!-- بطاقة: تهنئة -->
             <div class="card">
                 <div class="card-img">
                     <img src="images/doctorate.jpg" loading="lazy" alt="تهنئة تخرج الدكتوراه">
@@ -3311,7 +3320,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         </div>
     </section>
 
-   <!-- نافذة منبثقة: تهنئة -->
+    <!-- نافذة منبثقة: تهنئة -->
     <div id="doctorateModal" class="modal">
         <div class="modal-content">
             <button class="close-button">&times;</button>
@@ -3341,7 +3350,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     </p>
                 </div>
             </div>
-
             <div class="modal-actions">
                 <button class="action-button primary" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
                     مشاركة <i class="fas fa-share-alt"></i>
@@ -3350,7 +3358,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         </div>
     </div>
 
-   <!-- نافذة منبثقة: فيديو روضة واحة الطفل -->
+    <!-- نافذة منبثقة: فيديو روضة واحة الطفل -->
     <div id="kidsGardenModal" class="modal">
         <div class="modal-content">
             <button class="close-button">&times;</button>
@@ -4942,6 +4950,24 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 installBtn.style.display = "none";
             }
         });
+
+        // إخفاء الهيدر
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > lastScroll && currentScroll > 80) {
+                // التمرير للأسفل → إخفاء الهيدر
+                header.classList.add('hide');
+            } else {
+                // التمرير للأعلى → إظهار الهيدر
+                header.classList.remove('hide');
+            }
+
+            lastScroll = currentScroll;
+        });
+
 
     </script>
 </body>
