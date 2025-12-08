@@ -259,6 +259,7 @@
         }
 
         /* الشريط العلوي */
+        /* header - ثابت مع إمكانية التحريك */
         .header {
             position: fixed;
             top: 0;
@@ -267,17 +268,15 @@
             background: linear-gradient(135deg, var(--green) 0%, var(--red) 100%);
             box-shadow: var(--shadow);
             z-index: 1000;
-            transition: var(--transition);
+            will-change: transform;
+            transition: transform 0.28s ease;
+            /* استخدم سطر واحد للtransition */
         }
 
-        .header {
-            transition: transform 0.3s ease;
-        }
-
+        /* الحالة المخفية */
         .header.hide {
             transform: translateY(-100%);
         }
-
 
         .nav-container {
             display: flex;
@@ -4950,26 +4949,39 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 installBtn.style.display = "none";
             }
         });
-
-        // إخفاء الهيدر
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-
-            if (currentScroll > lastScroll && currentScroll > 80) {
-                // التمرير للأسفل → إخفاء الهيدر
-                header.classList.add('hide');
-            } else {
-                // التمرير للأعلى → إظهار الهيدر
-                header.classList.remove('hide');
-            }
-
-            lastScroll = currentScroll;
-        });
-
-
     </script>
+
+    <script>
+        // إخفاء الهيدر
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    if (!header) return; // لو ما لقى الهيدر يوقف بهدوء
+
+    let lastScroll = window.scrollY || 0;
+    const tolerance = 8; // تجاهل حركات صغيرة
+    const hideAfter = 100; // لا يخفي إلا بعد تجاوز 100px من أعلى الصفحة
+
+    window.addEventListener('scroll', () => {
+        const current = window.scrollY || 0;
+        const diff = Math.abs(current - lastScroll);
+
+        // تجاهل الحركات الصغيرة جداً
+        if (diff <= tolerance) return;
+
+        if (current > lastScroll && current > hideAfter) {
+            // نازِل: إخفاء
+            header.classList.add('hide');
+        } else if (current < lastScroll) {
+            // طالع: إظهار
+            header.classList.remove('hide');
+        }
+
+        lastScroll = current;
+    }, { passive: true });
+});
+</script>
+
 </body>
 
 </html>
