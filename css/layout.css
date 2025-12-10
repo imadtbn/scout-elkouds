@@ -1,0 +1,154 @@
+/* الشريط العلوي */
+/* في قسم أنماط الشريط العلوي */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--green) 0%, var(--red) 100%);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* الحالة المخفية */
+.header.hide {
+    transform: translateY(-100%);
+}
+
+/* الحالة الظاهرة */
+.header.show {
+    transform: translateY(0);
+}
+
+/* للحفاظ على الشريط مرئيًا في أعلى الصفحة */
+.header.top {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* عند التمرير قليلاً - تأثير ظل */
+.header.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    max-width: var(--container-width);
+    margin: 0 auto;
+    height: var(--header-height);
+}
+
+/* القسم الرئيسي */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(66, 45, 45, 0.5), rgba(0, 0, 0, 0.5)),
+                url('images/background.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 var(--spacing-md);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+}
+
+/* الفوتر */
+.footer {
+    background: linear-gradient(135deg, var(--green) 0%, var(--red) 100%);
+    color: var(--white);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.footer-section h3 {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* زر الوضع الليلي */
+#themeToggle {
+    position: fixed;
+    top: 460px;
+    left: 20px;
+    background: var(--white);
+    color: var(--green);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+#themeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* زر الصعود للأعلى */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 999;
+    display: none;
+    transition: var(--transition);
+}
+
+#scrollTopBtn:hover {
+    background: var(--red);
+    transform: scale(1.1);
+}
