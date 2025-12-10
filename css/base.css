@@ -1,0 +1,115 @@
+:root {
+    /* الألوان الأساسية */
+    --green: #2E7D32;
+    --red: #C62828;
+    --white: #FFFFFF;
+    --black: #000000;
+    --light-gray: #F5F5F5;
+    --dark-gray: #333333;
+    --gold: #FFD700;
+
+    /* الألوان الفرعية */
+    --light-green: #E8F5E9;
+    --light-red: #FFEBEE;
+    --light-blue: #E3F2FD;
+    --light-yellow: #FFFDE7;
+
+    /* الظلال */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    /* الأنماط */
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+
+    /* المسافات */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+
+    /* الأحجام */
+    --header-height: 80px;
+    --container-width: 1200px;
+}
+
+/* الوضع الليلي */
+.dark-mode {
+    --white: #121212;
+    --black: #FFFFFF;
+    --light-gray: #1E1E1E;
+    --dark-gray: #E0E0E0;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+    direction: rtl;
+    transition: var(--transition);
+}
+
+/* إخفاء شريط التمرير في بعض المتصفحات */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--red);
+}
+
+/* التنسيقات العامة */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--green);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to left, var(--green), var(--red));
+    border-radius: 2px;
+}
