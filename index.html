@@ -2312,6 +2312,25 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* إخفاء البطاقات الزائدة */
+        #posts .card.hidden {
+            display: none;
+        }
+
+        /* تحسين عرض زر "المزيد" */
+        #posts .load-more-btn.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        #posts .load-more-btn .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+
+        #posts .load-more-btn:active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         /* النوافذ المنبثقة للمنشورات */
         #posts .modal-content {
             animation: fadeIn 0.4s ease;
@@ -2540,8 +2559,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <button id="themeToggle" title="تبديل الوضع">
             <i class="fas fa-moon"></i>
         </button>
-
-
 
     </header>
 
@@ -3007,6 +3024,73 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
+            <!-- الذاكرة الوطنية – معركة واد هلال -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/wad-hilal.jpg" loading="lazy" alt="الذكرى 71 لمعركة واد هلال">
+                    <div class="card-badge">ديسمبر 2025</div>
+                    <div class="card-badge new">مناسبة وطنية</div>
+                </div>
+
+                <div class="card-content">
+                    <h3><i class="fas fa-monument"></i> الذاكرة الوطنية</h3>
+                    <p>
+                        مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال
+                        بقرية شرابة – بلدية بغلية.
+                    </p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="wadHilalModal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نافذة تفاصيل الذكرى الوطنية -->
+            <div id="wadHilalModal" class="modal">
+                <div class="modal-content">
+                    <button class="close-button">&times;</button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">الذكرى 71 لمعركة واد هلال</h3>
+                        <p class="modal-subtitle">الإثنين 22 ديسمبر 2025</p>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <img src="images/wad-hilal2.jpg" loading="lazy" alt="معركة واد هلال – قرية شرابة">
+                        </div>
+
+                        <div class="modal-info">
+                            <h4>تفاصيل المشاركة</h4>
+                            <p>
+                                شارك صباح اليوم <strong>الإثنين 22 ديسمبر 2025</strong>
+                                <strong>#فوج_القدس</strong> لقدماء الكشافة الإسلامية الجزائرية
+                                لبلدية <strong>#سيدي_داود</strong> في المراسيم الرسمية
+                                لإحياء الذكرى <strong>71 لمعركة واد هلال</strong> الشهيرة،
+                                بقرية <strong>شرابة</strong> بلدية <strong>بغلية</strong>،
+                                وذلك بدعوة من <strong>#قسمة_المجاهدين_بغلية</strong> و
+                                <strong>#رئيس_المجلس_الشعبي_البلدي_لبلدية_بغلية</strong>.<br><br>
+
+                                عرفت المراسيم حضور السلطات المحلية، الأسرة الثورية،
+                                ممثلي مصالح الأمن، المنتخبين، المجتمع المدني،
+                                الفرق الكشفية وجموع المواطنين، حيث تم وضع إكليل
+                                من الزهور وقراءة فاتحة الكتاب ترحمًا على أرواح الشهداء
+                                أمام النصب التذكاري.<br><br>
+
+                                <strong>عاشت الجزائر حرة مستقلة 🇩🇿</strong><br>
+                                <strong>المجد والخلود لشهدائنا الأبرار</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- مواساة – تمنيات بالشفاء -->
             <div class="card">
                 <div class="card-img">
@@ -3072,8 +3156,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                     </div>
                 </div>
             </div>
-
-
 
             <!-- لقاءات رسمية – اجتماع محافظي الأفواج -->
             <div class="card">
@@ -3143,7 +3225,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 </div>
             </div>
 
-
             <!-- مظاهرات 11 ديسمبر 1960 -->
             <div class="card">
                 <div class="card-img">
@@ -3195,7 +3276,7 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
 
                                 هذا اليوم التاريخي جسّد الالتفاف الشعبي حول جبهة التحرير
                                 الوطني، وكان نقطة حاسمة في مسار استعادة السيادة الوطنية
-                               <br><br>
+                                <br><br>
 
                                 نحن <strong>#فوج_القدس_سيدي_داود</strong> نجدد العهد بأن نبقى
                                 أوفياء لرسالة الشهداء، ونغرس في كشافينا قيم الوحدة،
@@ -3518,7 +3599,6 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             <button class="load-more-btn">المزيد من المنشورات <i class="fas fa-chevron-down"></i></button>
         </div>
     </section>
-
 
     <!-- نافذة منبثقة: تهنئة -->
     <div id="doctorateModal" class="modal">
@@ -4287,8 +4367,8 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
         </div>
     </footer>
 
-    <!-- عام -->
-    <script>
+<script>
+       //<!-- عام -->
         // كود JavaScript للتأثيرات والوظائف
         document.addEventListener('DOMContentLoaded', function () {
             // القائمة المتنقلة
@@ -4374,7 +4454,32 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.2)';
             }
         });
-    </script>
+
+        // في main.js
+// 1. تحميل الصور عند الحاجة فقط
+const lazyLoadImages = () => {
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+};
+
+// 2. تقسيم الكود
+if ('loading' in HTMLImageElement.prototype) {
+    // المتصفح يدعم lazy loading natively
+} else {
+    // استخدام polyfill
+}
+</script>
 
     <!-- قسم التنظيم -->
     <script>
@@ -4834,6 +4939,47 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
                 description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
                 date: "05 ديسمبر 2025"
             },
+            {
+                id: 19,
+                src: "images/wad-hilal.jpg",
+                category: "events",
+                title: "الذكرى 71 لمعركة واد هلال",
+                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
+                date: "22 ديسمبر 2025"
+            },
+          
+            {
+                id: 19,
+                src: "images/wad-hilal2.jpg",
+                category: "events",
+                title: "الذكرى 71 لمعركة واد هلال",
+                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
+                date: "22 ديسمبر 2025"
+            },
+                {
+                id: 19,
+                src: "images/wad-hilal3.jpg",
+                category: "events",
+                title: "الذكرى 71 لمعركة واد هلال",
+                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
+                date: "22 ديسمبر 2025"
+            },
+                {
+                id: 19,
+                src: "images/wad-hilal4.jpg",
+                category: "events",
+                title: "الذكرى 71 لمعركة واد هلال",
+                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
+                date: "22 ديسمبر 2025"
+            },
+                            {
+                id: 19,
+                src: "images/wad-hilal5.jpg",
+                category: "events",
+                title: "الذكرى 71 لمعركة واد هلال",
+                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
+                date: "22 ديسمبر 2025"
+            },
         ];
 
         let currentFilter = 'all';
@@ -5119,6 +5265,100 @@ z-index:9999;max-width:280px;border:2px solid #d40000;">
             }
         }
 
+
+        // تحميل المزيد من المنشورات
+        document.addEventListener('DOMContentLoaded', function () {
+            const postsSection = document.getElementById('posts');
+            if (!postsSection) return;
+
+            const cardsGrid = postsSection.querySelector('.cards-grid');
+            const loadMoreBtn = postsSection.querySelector('.load-more-btn');
+            const allCards = Array.from(cardsGrid.querySelectorAll('.card'));
+
+            // عدد البطاقات المعروضة في البداية
+            const initialCount = 4;
+            // عدد البطاقات الإضافية عند الضغط على "المزيد"
+            const step = 4;
+
+            let visibleCount = initialCount;
+
+            // دالة لتحديث عرض البطاقات
+            function updateCardsVisibility() {
+                allCards.forEach((card, index) => {
+                    if (index < visibleCount) {
+                        card.classList.remove('hidden');
+                        card.style.animation = `fadeIn 0.5s ease ${index * 0.1}s forwards`;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // تحديث نص الزر
+                if (visibleCount >= allCards.length) {
+                    loadMoreBtn.innerHTML = '<i class="fas fa-check"></i> جميع المنشورات معروضة';
+                    loadMoreBtn.disabled = true;
+                    loadMoreBtn.classList.add('loading');
+                } else {
+                    const remaining = allCards.length - visibleCount;
+                    loadMoreBtn.innerHTML = `عرض ${Math.min(step, remaining)} منشور${Math.min(step, remaining) > 1 ? 'ات' : ''} إضافية <i class="fas fa-chevron-down"></i>`;
+                    loadMoreBtn.disabled = false;
+                    loadMoreBtn.classList.remove('loading');
+                }
+            }
+
+            // تأثير ظهور البطاقات
+            const fadeInAnimation = `
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+
+            const styleSheet = document.createElement('style');
+            styleSheet.textContent = fadeInAnimation;
+            document.head.appendChild(styleSheet);
+
+            // تهيئة البطاقات في البداية
+            updateCardsVisibility();
+
+            // حدث النقر على زر "المزيد من المنشورات"
+            loadMoreBtn.addEventListener('click', function () {
+                // تأثير النقر
+                this.classList.add('loading');
+
+                // زيادة عدد البطاقات المرئية
+                visibleCount += step;
+
+                // تأخير بسيط لمحاكاة التحميل
+                setTimeout(() => {
+                    updateCardsVisibility();
+                    this.classList.remove('loading');
+
+                    // تمرير سلس إلى البطاقات الجديدة
+                    if (visibleCount <= allCards.length) {
+                        const firstNewCard = allCards[visibleCount - step];
+                        if (firstNewCard) {
+                            firstNewCard.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest'
+                            });
+                        }
+                    }
+                }, 300);
+            });
+
+            // تحديث عند تغيير حجم النافذة
+            window.addEventListener('resize', function () {
+                // تعديل عدد البطاقات المعروضة بناءً على حجم الشاشة
+                if (window.innerWidth < 768) {
+                    // في الهواتف، عرض بطاقتين فقط في البداية
+                    if (visibleCount > initialCount) {
+                        visibleCount = Math.max(initialCount, 2);
+                        updateCardsVisibility();
+                    }
+                }
+            });
+        });
     </script>
 
     <script>
