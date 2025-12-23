@@ -655,6 +655,66 @@
         <h2 class="section-title">منشورات و نشاطات الفوج</h2>
         <div class="cards-grid">
 
+                        <!-- إعلان هام – تأكيد المشاركة -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/announcement.jpg" loading="lazy" alt="إعلان هام للكشافين">
+                    <div class="card-badge">ديسمبر 2025</div>
+                    <div class="card-badge new">إعلان هام</div>
+                </div>
+
+                <div class="card-content">
+                    <h3><i class="fas fa-bullhorn"></i> إعلان هام</h3>
+                    <p>
+                        دعوة لجميع الكشافين (ذكور) لتأكيد المشاركة
+                        في رحلة يوم الأربعاء.
+                    </p>
+
+                    <div class="card-buttons-container">
+                        <button class="card-button" data-modal="confirmTripModal">
+                            تعرف أكثر <i class="fas fa-arrow-left"></i>
+                        </button>
+
+                        <button class="card-button" onclick="sharePost('https://imadtbn.github.io/scout-elkouds/')">
+                            مشاركة <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نافذة تفاصيل الإعلان -->
+            <div id="confirmTripModal" class="modal">
+                <div class="modal-content">
+                    <button class="close-button">&times;</button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">إعلان هام للكشافين</h3>
+                        <p class="modal-subtitle">تأكيد المشاركة في الرحلة</p>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <img src="images/announcement.jpg" loading="lazy" alt="تأكيد المشاركة في الرحلة">
+                        </div>
+
+                        <div class="modal-info">
+                            <h4>نص الإعلان</h4>
+                            <p>
+                                نُعلم جميع <strong>الكشافين (ذكور)</strong> بضرورة
+                                الحضور إلى <strong>مكتبة البلدية</strong>
+                                <strong>غدًا الثلاثاء</strong> على الساعة
+                                <strong>14:00</strong> (الثانية مساءً)،
+                                وذلك من أجل <strong>تأكيد المشاركة</strong>
+                                في رحلة <strong>يوم الأربعاء</strong>.<br><br>
+
+                                الحضور ضروري والتنظيم مسؤولية الجميع.<br>
+                                <strong>كونوا في الموعد ⏰</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- الذاكرة الوطنية – معركة واد هلال -->
             <div class="card">
                 <div class="card-img">
@@ -1907,4 +1967,5 @@
 </body>
 
 </html>
+
 
