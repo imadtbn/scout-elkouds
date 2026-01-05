@@ -1,196 +1,277 @@
 // gallery.js
 document.addEventListener('DOMContentLoaded', function () {
-        const galleryImages = [
-            {
-                id: 1,
-                src: "images/mokhayam.jpg",
-                category: "camping",
-                title: "المخيم الكشفي السنوي",
-                description: "المخيم الكشفي السنوي في غابة بوعلام بمشاركة 120 كشافاً",
-                date: "11 جويلية 2024"
-            },
-            {
-                id: 2,
-                src: "images/montagne.jpg",
-                category: "hiking",
-                title: "خرجة جبلية استكشافية",
-                description: "خرجة استكشافية إلى جبال الأطلس لتعلم مهارات التوجيه",
-                date: "26 أفريل 2025"
-            },
-            {
-                id: 3,
-                src: "images/isaafat.jpg",
-                category: "training",
-                title: "دورة الإسعافات الأولية",
-                description: "دورة متخصصة في الإسعافات الأولية بالتعاون مع الهلال الأحمر",
-                date: "10 جانفي 2025"
-            },
-            {
-                id: 4,
-                src: "images/1nouvembre.jpg",
-                category: "events",
-                title: "احتفال عيد الثورة",
-                description: "احتفال بمناسبة عيد الثورة المجيدة بحضور 50 كشاف",
-                date: "01 نوفمبر 2024"
-            },
-            {
-                id: 5,
-                src: "images/tachdjir.jpg",
-                category: "community",
-                title: "حملة تشجير بيئية",
-                description: "مشاركة الكشافة في حملة التشجير الوطنية بزراعة 01 مليون شجرة",
-                date: "25 أكتوبر 2025"
-            },
-            {
-                id: 6,
-                src: "images/wikend.jpg",
-                category: "camping",
-                title: "معسكر نهاية الأسبوع",
-                description: "معسكر تدريبي مكثف لمدة 3 أيام في منطقة زموري",
-                date: "11 جويلية 2025"
-            },
-            {
-                id: 7,
-                src: "images/acte.jpg",
-                category: "training",
-                title: "ورشة العقد والحبال",
-                description: "ورشة عملية لتعلم فنون العقد الكشفية واستخدامات الحبال",
-                date: "25 جويلية 2024"
-            },
-            {
-                id: 8,
-                src: "images/plage.jpg",
-                category: "hiking",
-                title: "رحلة شاطئية",
-                description: "رحلة إلى الشاطئ لأنشطة السباحة والألعاب المائية - السوانين، سيدي داود",
-                date: "01 جانفي 2025"
-            },
-            {
-                id: 9,
-                src: "images/badge.jpg",
-                category: "events",
-                title: "حفل توزيع الشارات",
-                description: "حفل تكريمي لتوزيع الشارات والجوائز على المتميزين",
-                date: "26 فيفري 2025"
-            },
-            {
-                id: 10,
-                src: "images/nettoyage.jpg",
-                category: "community",
-                title: "حملة تنظيف الشوارع",
-                description: "حملة تنظيف الشوارع بسيدي داود ضمن أنشطة خدمة المجتمع",
-                date: "13 سبتمبر 2025"
-            },
-            {
-                id: 11,
-                src: "images/hiver.jpg",
-                category: "camping",
-                title: "معسكر الشتاء",
-                description: "معسكر شتوي لتعلم مهارات البقاء في الظروف الصعبة",
-                date: "01 فيفري 2024"
-            },
-            {
-                id: 12,
-                src: "images/commandement.jpg",
-                category: "training",
-                title: "دورة القيادة",
-                description: "دورة تأهيل القادة الجدد بمشاركة 35 متقدماً",
-                date: "01 ديسمبر 2024"
-            },
-            {
-                id: 13,
-                src: "images/quran2.jpg",
-                category: "community",
-                title: "دورة تحفيظ القرآن",
-                description: "دورة تحفيظ القرآن تحت إشراف القائد: شلال جابر",
-                date: "14 نوفمبر 2025"
-            },
-            {
-                id: 14,
-                src: "images/Réunions.jpg",
-                category: "meeting",
-                title: "اللقاء الأول لمحافظي الأفواج",
-                description: "لقاء محافظي الأفواج بمقر فوج الشهيد أحمد زبانة زعاترة بلدية زموري",
-                date: "14 نوفمبر 2025"
-            },
-            {
-                id: 15,
-                src: "images/27052023.jpg",
-                category: "gallery",
-                title: "إحياء ذكرى تأسيس الكشافةالجزائرية",
-                description: "إحياء ذكرى  تأسيس الكشافةالجزائرية بدار الشباب",
-                date: "27 ماي 2023"
-            },
-            {
-                id: 16,
-                src: "images/volunteer.jpg",
-                category: "events",
-                title: "اليوم العالمي للتطوع",
-                description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
-                date: "05 ديسمبر 2025"
-            },
-            {
-                id: 17,
-                src: "images/volunteer1.jpg",
-                category: "events",
-                title: "اليوم العالمي للتطوع",
-                description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
-                date: "05 ديسمبر 2025"
-            },
-            {
-                id: 18,
-                src: "images/volunteer2.jpg",
-                category: "events",
-                title: "اليوم العالمي للتطوع",
-                description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
-                date: "05 ديسمبر 2025"
-            },
-            {
-                id: 19,
-                src: "images/wad-hilal.jpg",
-                category: "events",
-                title: "الذكرى 71 لمعركة واد هلال",
-                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
-                date: "22 ديسمبر 2025"
-            },
-          
-            {
-                id: 19,
-                src: "images/wad-hilal2.jpg",
-                category: "events",
-                title: "الذكرى 71 لمعركة واد هلال",
-                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
-                date: "22 ديسمبر 2025"
-            },
-                {
-                id: 19,
-                src: "images/wad-hilal3.jpg",
-                category: "events",
-                title: "الذكرى 71 لمعركة واد هلال",
-                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
-                date: "22 ديسمبر 2025"
-            },
-                {
-                id: 19,
-                src: "images/wad-hilal4.jpg",
-                category: "events",
-                title: "الذكرى 71 لمعركة واد هلال",
-                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
-                date: "22 ديسمبر 2025"
-            },
-                            {
-                id: 19,
-                src: "images/wad-hilal5.jpg",
-                category: "events",
-                title: "الذكرى 71 لمعركة واد هلال",
-                description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة – بلدية بغلية",
-                date: "22 ديسمبر 2025"
-            },
-        ];
+    const galleryImages = [
+        {
+            id: 1,
+            src: "images/mokhayam.jpg",
+            category: "camping",
+            title: "المخيم الكشفي السنوي",
+            description: "المخيم الكشفي السنوي في غابة بوعلام بمشاركة 120 كشافاً",
+            date: "11 جويلية 2024"
+        },
+        {
+            id: 2,
+            src: "images/montagne.jpg",
+            category: "hiking",
+            title: "خرجة جبلية استكشافية",
+            description: "خرجة استكشافية إلى جبال الأطلس لتعلم مهارات التوجيه",
+            date: "26 أفريل 2025"
+        },
+        {
+            id: 3,
+            src: "images/isaafat.jpg",
+            category: "training",
+            title: "دورة الإسعافات الأولية",
+            description: "دورة متخصصة في الإسعافات الأولية بالتعاون مع الهلال الأحمر",
+            date: "10 جانفي 2025"
+        },
+        {
+            id: 4,
+            src: "images/1nouvembre.jpg",
+            category: "events",
+            title: "احتفال عيد الثورة",
+            description: "احتفال بمناسبة عيد الثورة المجيدة بحضور 50 كشاف",
+            date: "01 نوفمبر 2024"
+        },
+        {
+            id: 5,
+            src: "images/tachdjir.jpg",
+            category: "community",
+            title: "حملة تشجير بيئية",
+            description: "مشاركة الكشافة في حملة التشجير الوطنية بزراعة 01 مليون شجرة",
+            date: "25 أكتوبر 2025"
+        },
+        {
+            id: 6,
+            src: "images/wikend.jpg",
+            category: "camping",
+            title: "معسكر نهاية الأسبوع",
+            description: "معسكر تدريبي مكثف لمدة 3 أيام في منطقة زموري",
+            date: "11 جويلية 2025"
+        },
+        {
+            id: 7,
+            src: "images/acte.jpg",
+            category: "training",
+            title: "ورشة العقد والحبال",
+            description: "ورشة عملية لتعلم فنون العقد الكشفية واستخدامات الحبال",
+            date: "25 جويلية 2024"
+        },
+        {
+            id: 8,
+            src: "images/plage.jpg",
+            category: "hiking",
+            title: "رحلة شاطئية",
+            description: "رحلة إلى الشاطئ لأنشطة السباحة والألعاب المائية - السوانين، سيدي داود",
+            date: "01 جانفي 2025"
+        },
+        {
+            id: 9,
+            src: "images/badge.jpg",
+            category: "events",
+            title: "حفل توزيع الشارات",
+            description: "حفل تكريمي لتوزيع الشارات والجوائز على المتميزين",
+            date: "26 فيفري 2025"
+        },
+        {
+            id: 10,
+            src: "images/nettoyage.jpg",
+            category: "community",
+            title: "حملة تنظيف الشوارع",
+            description: "حملة تنظيف الشوارع بسيدي داود ضمن أنشطة خدمة المجتمع",
+            date: "13 سبتمبر 2025"
+        },
+        {
+            id: 11,
+            src: "images/hiver.jpg",
+            category: "camping",
+            title: "معسكر الشتاء",
+            description: "معسكر شتوي لتعلم مهارات البقاء في الظروف الصعبة",
+            date: "01 فيفري 2024"
+        },
+        {
+            id: 12,
+            src: "images/commandement.jpg",
+            category: "training",
+            title: "دورة القيادة",
+            description: "دورة تأهيل القادة الجدد بمشاركة 35 متقدماً",
+            date: "01 ديسمبر 2024"
+        },
+        {
+            id: 13,
+            src: "images/quran2.jpg",
+            category: "community",
+            title: "دورة تحفيظ القرآن",
+            description: "دورة تحفيظ القرآن تحت إشراف القائد: شلال جابر",
+            date: "14 نوفمبر 2025"
+        },
+        {
+            id: 14,
+            src: "images/Réunions.jpg",
+            category: "meeting",
+            title: "اللقاء الأول لمحافظي الأفواج",
+            description: "لقاء محافظي الأفواج بمقر فوج الشهيد أحمد زبانة زعاترة بلدية زموري",
+            date: "14 نوفمبر 2025"
+        },
+        {
+            id: 15,
+            src: "images/27052023.jpg",
+            category: "gallery",
+            title: "إحياء ذكرى تأسيس الكشافةالجزائرية",
+            description: "إحياء ذكرى  تأسيس الكشافةالجزائرية بدار الشباب",
+            date: "27 ماي 2023"
+        },
+        {
+            id: 16,
+            src: "images/volunteer.jpg",
+            category: "events",
+            title: "اليوم العالمي للتطوع",
+            description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+            date: "05 ديسمبر 2025"
+        },
+        {
+            id: 17,
+            src: "images/volunteer1.jpg",
+            category: "events",
+            title: "اليوم العالمي للتطوع",
+            description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+            date: "05 ديسمبر 2025"
+        },
+        {
+            id: 18,
+            src: "images/volunteer2.jpg",
+            category: "events",
+            title: "اليوم العالمي للتطوع",
+            description: "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+            date: "05 ديسمبر 2025"
+        },
+        {
+            id: 19,
+            src: "images/wad-hilal.jpg",
+            category: "events",
+            title: "الذكرى 71 لمعركة واد هلال",
+            description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+            date: "22 ديسمبر 2025"
+        },
+
+        {
+            id: 19,
+            src: "images/wad-hilal2.jpg",
+            category: "events",
+            title: "الذكرى 71 لمعركة واد هلال",
+            description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+            date: "22 ديسمبر 2025"
+        },
+        {
+            id: 19,
+            src: "images/wad-hilal3.jpg",
+            category: "events",
+            title: "الذكرى 71 لمعركة واد هلال",
+            description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+            date: "22 ديسمبر 2025"
+        },
+        {
+            id: 19,
+            src: "images/wad-hilal4.jpg",
+            category: "events",
+            title: "الذكرى 71 لمعركة واد هلال",
+            description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+            date: "22 ديسمبر 2025"
+        },
+        {
+            id: 19,
+            src: "images/wad-hilal5.jpg",
+            category: "events",
+            title: "الذكرى 71 لمعركة واد هلال",
+            description: "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+            date: "22 ديسمبر 2025"
+        },
+        {
+            id: 20,
+            src: "images/dream-park.jpg",
+            category: "hiking",
+            title: "رحلة ترفيهية",
+            description: "رحلة ترفيهية لمدينة الألعاب دريم برك بقصر المعارض لفائدة وحدات الفوج.",
+            date: "28 ديسمبر 2025"
+        },
+        {
+            id: 21,
+            src: "images/dream-park1.jpg",
+            category: "hiking",
+            title: "رحلة ترفيهية",
+            description: "رحلة ترفيهية لمدينة الألعاب دريم برك بقصر المعارض لفائدة وحدات الفوج.",
+            date: "28 ديسمبر 2025"
+        },
+        {
+            id: 22,
+            src: "images/school-cleaning.jpg",
+            category: "community",
+            title: "حملة تنظيف",
+            description: "حملة تنقية وتنظيف بمدرسة علي عبديش الابتدائية في إطار الحملة الوطنية لتنظيف المدارس.",
+            date: "29 ديسمبر 2025"
+        },
+        {
+            id: 23,
+            src: "images/school-cleaning1.jpg",
+            category: "community",
+            title: "حملة تنظيف",
+            description: "حملة تنقية وتنظيف بمدرسة علي عبديش الابتدائية في إطار الحملة الوطنية لتنظيف المدارس.",
+            date: "29 ديسمبر 2025"
+        },
+        {
+            id: 24,
+            src: "images/algiers-trip.jpg",
+            category: "hiking",
+            title: "رحلة تربوية ترفيهية",
+            description: "رحلة تربوية وطنية إلى معالم الجزائر العاصمة في إطار برنامج العطلة الشتوية",
+            date: "30 ديسمبر 2025"
+        },
+        {
+            id: 25,
+            src: "images/algiers-trip 3.jpg",
+            category: "hiking",
+            title: "رحلة تربوية ترفيهية",
+            description: "رحلة تربوية وطنية إلى معالم الجزائر العاصمة في إطار برنامج العطلة الشتوية",
+            date: "30 ديسمبر 2025"
+        },
+        {
+            id: 26,
+            src: "images/algiers-trip2.jpg",
+            category: "hiking",
+            title: "رحلة تربوية ترفيهية",
+            description: "رحلة تربوية وطنية إلى معالم الجزائر العاصمة في إطار برنامج العطلة الشتوية",
+            date: "30 ديسمبر 2025"
+        },
+        {
+            id: 27,
+            src: "images/hamma-garden.jpg",
+            category: "hiking",
+            title: "رحلة تربوية ترفيهية",
+            description: "حديقة التجارب الحامة… مساحة طبيعية جمعت بين الاكتشاف، الراحة، والفرح",
+            date: "30 ديسمبر 2025"
+        },
+        {
+            id: 28,
+            src: "images/hamma-garden2.jpg",
+            category: "hiking",
+            title: "رحلة تربوية ترفيهية",
+            description: "حديقة التجارب الحامة… مساحة طبيعية جمعت بين الاكتشاف، الراحة، والفرح",
+            date: "30 ديسمبر 2025"
+        },
+        {
+            id: 29,
+            src: "images/hamma-garden3.jpg",
+            category: "hiking",
+            title: "رحلة تربوية ترفيهية",
+            description: "حديقة التجارب الحامة… مساحة طبيعية جمعت بين الاكتشاف، الراحة، والفرح",
+            date: "30 ديسمبر 2025"
+        },
+
+    ];
 
 
     let currentFilter = 'all';
-    let displayedImages = 8;
+    let displayedImages = 5;
     let currentImageIndex = 0;
 
     // تهيئة المعرض
@@ -203,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderGallery() {
         const galleryContainer = document.getElementById('gallery-container');
         if (!galleryContainer) return;
-        
+
         galleryContainer.innerHTML = '';
 
         const filteredImages = currentFilter === 'all'
@@ -247,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function openLightbox(index, images) {
         const lightbox = document.getElementById('lightbox');
         if (!lightbox) return;
-        
+
         const image = images[index];
         currentImageIndex = index;
 
