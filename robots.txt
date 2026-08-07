@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /assets/data/
+Disallow: /search.html
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
 Sitemap: https://imadtbn.github.io/scout-elkouds/sitemap.xml
+Host: https://imadtbn.github.io/scout-elkouds/
+Crawl-delay: 2

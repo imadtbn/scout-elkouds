@@ -1,0 +1,266 @@
+[
+  {
+    "id": 1,
+    "category": "camping",
+    "title": "المخيم الكشفي السنوي",
+    "description": "المخيم الكشفي السنوي في غابة بوعلام بمشاركة 120 كشافاً",
+    "date": "11 جويلية 2024",
+    "image": "/scout-elkouds/assets/images/mokhayam.jpg"
+  },
+  {
+    "id": 2,
+    "category": "hiking",
+    "title": "خرجة جبلية استكشافية",
+    "description": "خرجة استكشافية إلى جبال الأطلس لتعلم مهارات التوجيه",
+    "date": "26 أفريل 2025",
+    "image": "/scout-elkouds/assets/images/montagne.jpg"
+  },
+  {
+    "id": 3,
+    "category": "training",
+    "title": "دورة الإسعافات الأولية",
+    "description": "دورة متخصصة في الإسعافات الأولية بالتعاون مع الهلال الأحمر",
+    "date": "10 جانفي 2025",
+    "image": "/scout-elkouds/assets/images/isaafat.jpg"
+  },
+  {
+    "id": 4,
+    "category": "events",
+    "title": "احتفال عيد الثورة",
+    "description": "احتفال بمناسبة عيد الثورة المجيدة بحضور 50 كشاف",
+    "date": "01 نوفمبر 2024",
+    "image": "/scout-elkouds/assets/images/1nouvembre.jpg"
+  },
+  {
+    "id": 5,
+    "category": "community",
+    "title": "حملة تشجير بيئية",
+    "description": "مشاركة الكشافة في حملة التشجير الوطنية بزراعة 01 مليون شجرة",
+    "date": "25 أكتوبر 2025",
+    "image": "/scout-elkouds/assets/images/tachdjir.jpg"
+  },
+  {
+    "id": 6,
+    "category": "camping",
+    "title": "معسكر نهاية الأسبوع",
+    "description": "معسكر تدريبي مكثف لمدة 3 أيام في منطقة زموري",
+    "date": "11 جويلية 2025",
+    "image": "/scout-elkouds/assets/images/wikend.jpg"
+  },
+  {
+    "id": 7,
+    "category": "training",
+    "title": "ورشة العقد والحبال",
+    "description": "ورشة عملية لتعلم فنون العقد الكشفية واستخدامات الحبال",
+    "date": "25 جويلية 2024",
+    "image": "/scout-elkouds/assets/images/acte.jpg"
+  },
+  {
+    "id": 8,
+    "category": "hiking",
+    "title": "رحلة شاطئية",
+    "description": "رحلة إلى الشاطئ لأنشطة السباحة والألعاب المائية - السوانين، سيدي داود",
+    "date": "01 جانفي 2025",
+    "image": "/scout-elkouds/assets/images/plage.jpg"
+  },
+  {
+    "id": 9,
+    "category": "events",
+    "title": "حفل توزيع الشارات",
+    "description": "حفل تكريمي لتوزيع الشارات والجوائز على المتميزين",
+    "date": "26 فيفري 2025",
+    "image": "/scout-elkouds/assets/images/badge.jpg"
+  },
+  {
+    "id": 10,
+    "category": "community",
+    "title": "حملة تنظيف الشوارع",
+    "description": "حملة تنظيف الشوارع بسيدي داود ضمن أنشطة خدمة المجتمع",
+    "date": "13 سبتمبر 2025",
+    "image": "/scout-elkouds/assets/images/nettoyage.jpg"
+  },
+  {
+    "id": 11,
+    "category": "camping",
+    "title": "معسكر الشتاء",
+    "description": "معسكر شتوي لتعلم مهارات البقاء في الظروف الصعبة",
+    "date": "01 فيفري 2024",
+    "image": "/scout-elkouds/assets/images/hiver.jpg"
+  },
+  {
+    "id": 12,
+    "category": "training",
+    "title": "دورة القيادة",
+    "description": "دورة تأهيل القادة الجدد بمشاركة 35 متقدماً",
+    "date": "01 ديسمبر 2024",
+    "image": "/scout-elkouds/assets/images/commandement.jpg"
+  },
+  {
+    "id": 13,
+    "category": "community",
+    "title": "دورة تحفيظ القرآن",
+    "description": "دورة تحفيظ القرآن تحت إشراف القائد: شلال جابر",
+    "date": "14 نوفمبر 2025",
+    "image": "/scout-elkouds/assets/images/quran2.jpg"
+  },
+  {
+    "id": 14,
+    "category": "meeting",
+    "title": "اللقاء الأول لمحافظي الأفواج",
+    "description": "لقاء محافظي الأفواج بمقر فوج الشهيد أحمد زبانة زعاترة بلدية زموري",
+    "date": "14 نوفمبر 2025",
+    "image": "/scout-elkouds/assets/images/reunions.jpg"
+  },
+  {
+    "id": 15,
+    "category": "gallery",
+    "title": "إحياء ذكرى تأسيس الكشافةالجزائرية",
+    "description": "إحياء ذكرى  تأسيس الكشافةالجزائرية بدار الشباب",
+    "date": "27 ماي 2023",
+    "image": "/scout-elkouds/assets/images/27052023.jpg"
+  },
+  {
+    "id": 16,
+    "category": "events",
+    "title": "اليوم العالمي للتطوع",
+    "description": "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+    "date": "05 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/volunteer.jpg"
+  },
+  {
+    "id": 17,
+    "category": "events",
+    "title": "اليوم العالمي للتطوع",
+    "description": "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+    "date": "05 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/volunteer1.jpg"
+  },
+  {
+    "id": 18,
+    "category": "events",
+    "title": "اليوم العالمي للتطوع",
+    "description": "مناسبة نُجدّد فيها قيم العطاء، خدمة المجتمع، وروح المبادرة",
+    "date": "05 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/volunteer2.jpg"
+  },
+  {
+    "id": 19,
+    "category": "events",
+    "title": "الذكرى 71 لمعركة واد هلال",
+    "description": "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+    "date": "22 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/wad-hilal.jpg"
+  },
+  {
+    "id": 19,
+    "category": "events",
+    "title": "الذكرى 71 لمعركة واد هلال",
+    "description": "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+    "date": "22 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/wad-hilal2.jpg"
+  },
+  {
+    "id": 19,
+    "category": "events",
+    "title": "الذكرى 71 لمعركة واد هلال",
+    "description": "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+    "date": "22 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/wad-hilal3.jpg"
+  },
+  {
+    "id": 19,
+    "category": "events",
+    "title": "الذكرى 71 لمعركة واد هلال",
+    "description": "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+    "date": "22 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/wad-hilal4.jpg"
+  },
+  {
+    "id": 19,
+    "category": "events",
+    "title": "الذكرى 71 لمعركة واد هلال",
+    "description": "مشاركة فوج القدس في إحياء الذكرى 71 لمعركة واد هلال بقرية شرابة بلدية بغلية",
+    "date": "22 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/wad-hilal5.jpg"
+  },
+  {
+    "id": 20,
+    "category": "hiking",
+    "title": "رحلة ترفيهية",
+    "description": "رحلة ترفيهية لمدينة الألعاب دريم برك بقصر المعارض لفائدة وحدات الفوج.",
+    "date": "28 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/dream-park.jpg"
+  },
+  {
+    "id": 21,
+    "category": "hiking",
+    "title": "رحلة ترفيهية",
+    "description": "رحلة ترفيهية لمدينة الألعاب دريم برك بقصر المعارض لفائدة وحدات الفوج.",
+    "date": "28 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/dream-park1.jpg"
+  },
+  {
+    "id": 22,
+    "category": "community",
+    "title": "حملة تنظيف",
+    "description": "حملة تنقية وتنظيف بمدرسة علي عبديش الابتدائية في إطار الحملة الوطنية لتنظيف المدارس.",
+    "date": "29 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/school-cleaning.jpg"
+  },
+  {
+    "id": 23,
+    "category": "community",
+    "title": "حملة تنظيف",
+    "description": "حملة تنقية وتنظيف بمدرسة علي عبديش الابتدائية في إطار الحملة الوطنية لتنظيف المدارس.",
+    "date": "29 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/school-cleaning1.jpg"
+  },
+  {
+    "id": 24,
+    "category": "hiking",
+    "title": "رحلة تربوية ترفيهية",
+    "description": "رحلة تربوية وطنية إلى معالم الجزائر العاصمة في إطار برنامج العطلة الشتوية",
+    "date": "30 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/algiers-trip.jpg"
+  },
+  {
+    "id": 25,
+    "category": "hiking",
+    "title": "رحلة تربوية ترفيهية",
+    "description": "رحلة تربوية وطنية إلى معالم الجزائر العاصمة في إطار برنامج العطلة الشتوية",
+    "date": "30 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/algiers-trip-3.jpg"
+  },
+  {
+    "id": 26,
+    "category": "hiking",
+    "title": "رحلة تربوية ترفيهية",
+    "description": "رحلة تربوية وطنية إلى معالم الجزائر العاصمة في إطار برنامج العطلة الشتوية",
+    "date": "30 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/algiers-trip2.jpg"
+  },
+  {
+    "id": 27,
+    "category": "hiking",
+    "title": "رحلة تربوية ترفيهية",
+    "description": "حديقة التجارب الحامة… مساحة طبيعية جمعت بين الاكتشاف، الراحة، والفرح",
+    "date": "30 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/hamma-garden.jpg"
+  },
+  {
+    "id": 28,
+    "category": "hiking",
+    "title": "رحلة تربوية ترفيهية",
+    "description": "حديقة التجارب الحامة… مساحة طبيعية جمعت بين الاكتشاف، الراحة، والفرح",
+    "date": "30 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/hamma-garden2.jpg"
+  },
+  {
+    "id": 29,
+    "category": "hiking",
+    "title": "رحلة تربوية ترفيهية",
+    "description": "حديقة التجارب الحامة… مساحة طبيعية جمعت بين الاكتشاف، الراحة، والفرح",
+    "date": "30 ديسمبر 2025",
+    "image": "/scout-elkouds/assets/images/hamma-garden3.jpg"
+  }
+]
