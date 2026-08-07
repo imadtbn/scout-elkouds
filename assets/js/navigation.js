@@ -9,6 +9,21 @@
         var navMenu = document.querySelector(".nav-menu");
         var header = document.querySelector(".header");
         var navLinks = document.querySelectorAll(".nav-menu a");
+        var scrim = document.getElementById("navScrim");
+
+        function setMenuOpen(open) {
+            if (!navMenu) return;
+            navMenu.classList.toggle("active", open);
+            document.body.classList.toggle("nav-open", open);
+            if (mobileMenu) mobileMenu.setAttribute("aria-expanded", String(open));
+            if (mobileMenu) {
+                var icon = mobileMenu.querySelector("i");
+                if (icon) {
+                    icon.classList.toggle("fa-bars", !open);
+                    icon.classList.toggle("fa-times", open);
+                }
+            }
+        }
 
         if (mobileMenu && navMenu) {
             mobileMenu.setAttribute("role", "button");
@@ -17,13 +32,7 @@
             mobileMenu.setAttribute("aria-label", "فتح قائمة التنقل");
 
             var toggleMenu = function () {
-                var isOpen = navMenu.classList.toggle("active");
-                mobileMenu.setAttribute("aria-expanded", String(isOpen));
-                var icon = mobileMenu.querySelector("i");
-                if (icon) {
-                    icon.classList.toggle("fa-bars");
-                    icon.classList.toggle("fa-times");
-                }
+                setMenuOpen(!navMenu.classList.contains("active"));
             };
 
             mobileMenu.addEventListener("click", toggleMenu);
@@ -35,10 +44,19 @@
             });
         }
 
+        if (scrim) {
+            scrim.addEventListener("click", function () { setMenuOpen(false); });
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && navMenu && navMenu.classList.contains("active")) {
+                setMenuOpen(false);
+            }
+        });
+
         navLinks.forEach(function (link) {
             link.addEventListener("click", function () {
-                if (navMenu) navMenu.classList.remove("active");
-                if (mobileMenu) mobileMenu.setAttribute("aria-expanded", "false");
+                setMenuOpen(false);
             });
         });
 

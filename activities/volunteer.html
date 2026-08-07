@@ -38,6 +38,7 @@
 <link rel="stylesheet" href="/scout-elkouds/assets/css/animations.css">
 <link rel="stylesheet" href="/scout-elkouds/assets/css/responsive.css">
 <link rel="stylesheet" href="/scout-elkouds/assets/css/modern.css">
+<link rel="stylesheet" href="/scout-elkouds/assets/css/site-fixes.css">
 
 <link rel="manifest" href="/scout-elkouds/manifest.webmanifest">
 <link rel="icon" href="/scout-elkouds/assets/icons/scout-logo.png" type="image/png">
@@ -133,12 +134,12 @@
   <nav class="nav-container">
     <a class="logo" href="/scout-elkouds/index.html">
       <img src="/scout-elkouds/assets/icons/icon.jpg" alt="شعار الكشافة" loading="lazy" class="logo-img" width="48" height="48">
-      <div>
+      <div class="logo-labels">
         <div class="logo-text">قدماء الكشافة الإسلامية الجزائرية</div>
         <div class="logo-subtext">فوج القدس - سيدي داود</div>
       </div>
     </a>
-    <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+
     <ul class="nav-menu">
       <li><a href="/scout-elkouds/index.html">الرئيسية</a></li>
       <li><a href="/scout-elkouds/about.html">عن الفوج</a></li>
@@ -148,18 +149,24 @@
       <li><a href="/scout-elkouds/news/index.html">الأخبار</a></li>
       <li><a href="/scout-elkouds/gallery.html">معرض الصور</a></li>
       <li><a href="/scout-elkouds/contact.html">اتصل بنا</a></li>
+      <li class="nav-menu-mobile-only"><a href="/scout-elkouds/join.html">الانخراط</a></li>
+      <li class="nav-menu-mobile-only"><a href="/scout-elkouds/search.html">البحث في الموقع</a></li>
     </ul>
-    <form class="quick-search-form" role="search" id="quick-search-form">
-      <label class="sr-only" for="quick-search-input">بحث في الموقع</label>
-      <input type="search" id="quick-search-input" placeholder="بحث…">
-      <button type="submit" aria-label="بحث"><i class="fas fa-search"></i></button>
-    </form>
+
+    <div class="nav-actions">
+      <form class="quick-search-form" role="search" id="quick-search-form">
+        <label class="sr-only" for="quick-search-input">بحث في الموقع</label>
+        <input type="search" id="quick-search-input" placeholder="بحث…">
+        <button type="submit" aria-label="بحث"><i class="fas fa-search"></i></button>
+      </form>
+      <a class="nav-icon-btn" href="/scout-elkouds/search.html" aria-label="البحث في الموقع" id="mobileSearchLink"><i class="fas fa-search"></i></a>
+      <button id="installBtn" class="nav-icon-btn" hidden aria-label="تثبيت التطبيق"><i class="fas fa-download"></i><span class="btn-label">تثبيت</span></button>
+      <button id="themeToggle" class="nav-icon-btn" title="تبديل الوضع" aria-label="تبديل الوضع الليلي"><i class="fas fa-moon"></i></button>
+      <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+    </div>
   </nav>
-  <div style="display:flex; align-items:center; gap:.6rem;">
-    <button id="installBtn" hidden><i class="fas fa-download"></i> تثبيت التطبيق</button>
-    <button id="themeToggle" title="تبديل الوضع"><i class="fas fa-moon"></i></button>
-  </div>
 </header>
+<div class="nav-scrim" id="navScrim"></div>
 
 <nav class="breadcrumb-nav" aria-label="مسار التصفح">
   <ol class="breadcrumb-list">

@@ -199,23 +199,7 @@ body::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
 }
 
-/* زر الوضع الليلي */
-#themeToggle {
-    position: fixed;
-    top: 460px;
-    left: 20px;
-    background: var(--white);
-    color: var(--green);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    z-index: 999;
-    transition: var(--transition);
-}
+/* ملاحظة: تم نقل تنسيق #themeToggle إلى شريط التنقل (assets/css/site-fixes.css) */
 
 #themeToggle:hover {
     transform: scale(1.1);
