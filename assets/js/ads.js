@@ -1,30 +1,35 @@
-/*!
- * ads.js — تحميل وحدات Google AdSense بأمان دون التأثير على Cumulative Layout Shift
- * يُحمَّل بعد استقرار الصفحة (بعد حدث load) لتفادي منافسة موارد التحميل الحرجة
- */
-(function (window, document) {
-    "use strict";
+// adsData.js
 
-    function pushAdUnit(ins) {
-        if (ins.hasAttribute("data-adsbygoogle-status")) return;
-        try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-            console.error("AdSense error:", e);
+document.addEventListener("DOMContentLoaded", function () {
+    // حساب عدد إعلانات AdSense المتوفرة في الصفحة
+    var adBlocks = document.querySelectorAll('ins.adsbygoogle');
+    adBlocks.forEach(function (adBlock) {
+        // التحقق من أن الإعلان لم يتم دفعه أو تحميله مسبقاً
+        if (!adBlock.hasAttribute('data-adsbygoogle-status')) {
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.error("AdSense push error: ", e);
+            }
         }
-    }
+    });
+});
 
-    function initAds() {
-        document.querySelectorAll("ins.adsbygoogle").forEach(pushAdUnit);
-    }
-
-    if (document.readyState === "complete") {
-        setTimeout(initAds, 1200);
-    } else {
-        window.addEventListener("load", function () {
-            // تأخير بسيط لضمان استقرار DOM وتفادي تعارض مع Service Worker
-            setTimeout(initAds, 1200);
+// الانتظار حتى يتم تحميل الصفحة بالكامل
+window.addEventListener('load', function () {
+    // تأخير بسيط لضمان استقرار وسم الـ DOM وتجنب تضارب الـ Service Worker
+    setTimeout(function () {
+        var adBlocks = document.querySelectorAll('ins.adsbygoogle');
+        adBlocks.forEach(function (adBlock) {
+            // التحقق بدقة: إذا لم يكن الإعلان قد تم معالجته من قبل جوجل ولم يتم عمل push له
+            if (!adBlock.hasAttribute('data-adsbygoogle-status') && adBlock.children.length === 0) {
+                try {
+                    (window.adsbygoogle = window.adsbygoogle || []).push({});
+                    console.log('تم تحميل وحدة إعلانية بنجاح.');
+                } catch (e) {
+                    console.error('خطأ أثناء تحميل الإعلان:', e);
+                }
+            }
         });
-    }
-
-})(window, document);
+    }, 2600); // تأخير نصف ثانية
+});
