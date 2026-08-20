@@ -650,3 +650,176 @@ body.nav-open .nav-scrim { display: block; }
         min-height: 3rem;
     }
 }
+
+
+/* ========================================================================
+   توسيط بطاقات الصفحة الرئيسية وتوحيد الارتفاعات
+   ======================================================================== */
+.home-page .cards-grid {
+    justify-content: center;
+    align-items: stretch;
+    margin-inline: auto;
+}
+
+.home-page #latest-news-grid,
+.home-page #latest-activities-grid,
+.home-page .home-join-grid {
+    width: 100%;
+    max-width: 1120px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    margin-inline: auto;
+}
+
+.home-page #latest-news-grid .card,
+.home-page #latest-activities-grid .card,
+.home-page .home-join-grid .card {
+    height: 100%;
+    min-width: 0;
+}
+
+.home-page #latest-news-grid .card-content,
+.home-page #latest-activities-grid .card-content {
+    min-height: 15rem;
+}
+
+.home-page .home-join-grid .card-content {
+    min-height: 16rem;
+    justify-content: flex-start;
+}
+
+.home-page #latest-news-grid .card-buttons-container,
+.home-page #latest-activities-grid .card-buttons-container,
+.home-page .home-join-grid .card-content > .card-button {
+    margin-top: auto;
+}
+
+.home-page #latest-news-grid .card-button,
+.home-page #latest-activities-grid .card-button,
+.home-page .home-join-grid .card-button {
+    min-height: 2.85rem;
+}
+
+.home-section-cta {
+    display: flex;
+    justify-content: center;
+    margin: clamp(1.75rem, 4vw, 2.5rem) auto 0;
+    padding-inline: 1rem;
+    text-align: center;
+}
+
+.home-section-cta .cta-button {
+    margin: 0;
+}
+
+/* قسم الأسئلة الشائعة في الصفحة الرئيسية */
+.home-faq-section {
+    background: linear-gradient(180deg, var(--light-blue) 0%, var(--white) 100%);
+}
+
+.home-faq-intro {
+    max-width: 660px;
+    margin: -1.5rem auto 2rem;
+    color: var(--dark-gray);
+    text-align: center;
+    opacity: .85;
+}
+
+.home-faq-list {
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 0;
+}
+
+.home-faq-list .faq-item {
+    border: 1px solid rgba(46, 125, 50, .1);
+    border-radius: 1rem;
+    box-shadow: 0 8px 22px rgba(46, 125, 50, .08);
+}
+
+.home-faq-list .faq-item[open] {
+    border-color: rgba(46, 125, 50, .25);
+}
+
+.home-faq-list .faq-answer {
+    color: var(--dark-gray);
+}
+
+.dark-mode .home-faq-section {
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+}
+
+.dark-mode .home-faq-list .faq-item {
+    border-color: rgba(255, 255, 255, .1);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+}
+
+@media (max-width: 1024px) {
+    .home-page #latest-news-grid,
+    .home-page #latest-activities-grid,
+    .home-page .home-join-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 760px;
+    }
+}
+
+@media (max-width: 680px) {
+    .home-page #latest-news-grid,
+    .home-page #latest-activities-grid,
+    .home-page .home-join-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 520px;
+    }
+
+    .home-page #latest-news-grid .card-content,
+    .home-page #latest-activities-grid .card-content,
+    .home-page .home-join-grid .card-content {
+        min-height: auto;
+    }
+
+    .home-faq-intro {
+        margin-top: -1rem;
+    }
+}
+
+/* صفحة التواصل: توسيط البطاقات وتوحيد الأزرار والارتفاعات */
+.contact-page .cards-grid {
+    width: 100%;
+    max-width: 1120px;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+}
+
+.contact-page .card {
+    height: 100%;
+    min-height: 100%;
+}
+
+.contact-page .card-content {
+    min-height: 16rem;
+}
+
+.contact-page .card-button {
+    min-height: 3.25rem;
+    margin-top: auto;
+}
+
+@media (max-width: 680px) {
+    .contact-page .cards-grid {
+        max-width: 520px;
+    }
+
+    .contact-page .card-content {
+        min-height: 14rem;
+    }
+}
+
+
+/* تثبيت ارتفاع أزرار بطاقات الاتصال ومنع تمددها داخل flex */
+.contact-page .card-button {
+    flex: 0 0 3.25rem;
+    height: 3.25rem;
+    min-height: 3.25rem;
+}
