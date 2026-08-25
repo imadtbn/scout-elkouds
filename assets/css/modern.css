@@ -373,7 +373,7 @@ body.is-offline .offline-banner { display: block; }
 
 /* -------- طباعة -------- */
 @media print {
-    .header, .footer, .ad-container, #scrollTopBtn, #themeToggle,
+    .header, .footer, #scrollTopBtn, #themeToggle,
     .article-actions, .breadcrumb-nav, .modal { display: none !important; }
     body { background: #fff; color: #000; }
 }

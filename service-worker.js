@@ -4,7 +4,7 @@
  */
 "use strict";
 
-const VERSION = "v1.0.0";
+const VERSION = "v1.0.1";
 const SCOPE = "/scout-elkouds/";
 const CACHE_STATIC = "fk-static-" + VERSION;
 const CACHE_PAGES = "fk-pages-" + VERSION;
@@ -39,7 +39,6 @@ const PRECACHE_URLS = [
   SCOPE + "assets/js/pwa.js",
   SCOPE + "assets/js/analytics.js",
   SCOPE + "assets/js/gallery.js",
-  SCOPE + "assets/js/ads.js",
   SCOPE + "assets/icons/icon.jpg",
   SCOPE + "assets/icons/scout-logo.png",
   SCOPE + "assets/data/posts.json",
