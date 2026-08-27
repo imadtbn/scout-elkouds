@@ -1,7 +1,7 @@
 /*
  * site-tags.js — محمّل مركزي لوسوم الموقع
  *
- * ضع هنا المعرف الحقيقي لحاوية Google Tag Manager بدلاً من GTM-xxxxxxxx.
+ * معرّف حاوية Google Tag Manager الحالي هو GTM-MMZPPWW9.
  * ضع هنا معرّف Microsoft Clarity بدلاً من xxxxxxxx.
  * معرّف GA4 الحالي موجود للتوثيق داخل إعدادات GTM، ولا يتم تحميل gtag.js مباشرة.
  */
@@ -12,8 +12,8 @@
   window.__siteTagsLoaded = true;
 
   const config = Object.freeze({
-    // ضع هنا معرف حاوية Google Tag Manager: GTM-xxxxxxxx
-    gtmId: 'GTM-xxxxxxxx',
+    // معرف حاوية Google Tag Manager الحالي.
+    gtmId: 'GTM-MMZPPWW9',
     // معرف GA4 الموجود في إعدادات الموقع؛ اربطه بـ Google tag داخل GTM.
     ga4MeasurementId: 'G-NKN85LGVRY',
     // معرّف ناشر AdSense الموجود في ملف adsbygoogle.txt.
