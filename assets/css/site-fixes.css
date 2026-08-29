@@ -666,7 +666,7 @@ body.nav-open .nav-scrim { display: block; }
 .home-page .home-join-grid {
     width: 100%;
     max-width: 1120px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-auto-rows: 1fr;
     margin-inline: auto;
 }
