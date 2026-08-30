@@ -67,7 +67,7 @@
             var gallery = results[1];
 
             if (posts && newsGrid) {
-                var count = parseInt(newsGrid.getAttribute("data-count"), 10) || 4;
+                var count = parseInt(newsGrid.getAttribute("data-count"), 10) || 6;
                 var news = posts.filter(function (p) { return p.category === "news"; })
                     .sort(function (a, b) { return b.date.localeCompare(a.date); })
                     .slice(0, count);
@@ -78,7 +78,7 @@
             }
 
             if (posts && activitiesGrid) {
-                var acount = parseInt(activitiesGrid.getAttribute("data-count"), 10) || 3;
+                var acount = parseInt(activitiesGrid.getAttribute("data-count"), 10) || 6;
                 var activities = posts.filter(function (p) { return p.category !== "news"; })
                     .sort(function (a, b) { return b.date.localeCompare(a.date); })
                     .slice(0, acount);
@@ -89,7 +89,7 @@
             }
 
             if (gallery && galleryGrid) {
-                var gcount = parseInt(galleryGrid.getAttribute("data-count"), 10) || 8;
+                var gcount = parseInt(galleryGrid.getAttribute("data-count"), 10) || 6;
                 var recentGallery = gallery.slice().sort(function (a, b) {
                     return (b.date || "").localeCompare(a.date || "");
                 }).slice(0, gcount);
