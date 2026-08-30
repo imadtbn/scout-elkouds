@@ -2,7 +2,7 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square150x150logo src="/scout-elkouds/assets/icons/scout-logo.png"/>
+      <square150x150logo src="assets/icons/scout-logo.png"/>
       <TileColor>#2E7D32</TileColor>
     </tile>
   </msapplication>
