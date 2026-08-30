@@ -67,7 +67,7 @@
             var gallery = results[1];
 
             if (posts && newsGrid) {
-                var count = parseInt(newsGrid.getAttribute("data-count"), 10) || 6;
+                var count = parseInt(newsGrid.getAttribute("data-count"), 10) || 4;
                 var news = posts.filter(function (p) { return p.category === "news"; })
                     .sort(function (a, b) { return b.date.localeCompare(a.date); })
                     .slice(0, count);
@@ -78,7 +78,7 @@
             }
 
             if (posts && activitiesGrid) {
-                var acount = parseInt(activitiesGrid.getAttribute("data-count"), 10) || 6;
+                var acount = parseInt(activitiesGrid.getAttribute("data-count"), 10) || 4;
                 var activities = posts.filter(function (p) { return p.category !== "news"; })
                     .sort(function (a, b) { return b.date.localeCompare(a.date); })
                     .slice(0, acount);
