@@ -358,18 +358,143 @@ body.is-offline .offline-banner { display: block; }
 .sitemap-page a { color: inherit; text-decoration: none; }
 .sitemap-page a:hover { color: var(--green); text-decoration: underline; }
 
-/* -------- إحصائيات مختصرة في الرئيسية -------- */
-.stats-strip {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+/* -------- إحصائيات فوج القدس: 4 أعمدة للحاسوب و2×2 للهاتف -------- */
+.home-stats-section {
+    padding-inline: 0;
 }
-.stats-strip .stat-box { text-align: center; }
-.stats-strip .stat-box strong { display: block; font-size: 2.2rem; color: var(--green); }
-.stats-strip .stat-box span { font-size: .9rem; opacity: .8; }
+.home-stats-section .section-title {
+    padding-inline: 1rem;
+}
+.home-stats-section .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(.75rem, 2vw, 1.25rem);
+    width: 100%;
+    max-width: 1160px;
+    padding-inline: clamp(.75rem, 3vw, 1.5rem);
+    margin-inline: auto;
+}
+.home-stats-section .stat-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-width: 0;
+    min-height: 195px;
+    padding: 1.35rem .75rem 1.25rem;
+    text-align: center;
+    border: 1px solid rgba(46, 125, 50, .16);
+    border-radius: 1.15rem;
+    background: var(--white);
+    box-shadow: 0 6px 22px rgba(23, 89, 44, .09);
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.home-stats-section .stat-box::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--green), var(--gold), var(--red));
+}
+.home-stats-section .stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    color: #1b6e36;
+    background: #e7f4e9;
+    font-size: 1.25rem;
+}
+.home-stats-section .stat-box:nth-child(2) .stat-icon {
+    color: #a92f36;
+    background: #fbe9ea;
+}
+.home-stats-section .stat-box:nth-child(3) .stat-icon {
+    color: #77550a;
+    background: #fff5d3;
+}
+.home-stats-section .stat-box:nth-child(4) .stat-icon {
+    color: #236359;
+    background: #e2f2ee;
+}
+.home-stats-section .stat-box strong {
+    display: block;
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--green);
+    font-variant-numeric: tabular-nums;
+}
+.home-stats-section .stat-label {
+    display: block;
+    min-width: 0;
+    font-size: clamp(.83rem, 1.4vw, .98rem);
+    font-weight: 700;
+    line-height: 1.65;
+    color: var(--dark-gray);
+    overflow-wrap: anywhere;
+}
+@media (hover: hover) and (pointer: fine) {
+    .home-stats-section .stat-box:hover {
+        transform: translateY(-4px);
+        border-color: rgba(46, 125, 50, .38);
+        box-shadow: 0 12px 30px rgba(23, 89, 44, .14);
+    }
+}
+.dark-mode .home-stats-section .stat-box {
+    border-color: rgba(255, 224, 119, .18);
+    background: #192721;
+    box-shadow: 0 7px 23px rgba(0, 0, 0, .26);
+}
+.dark-mode .home-stats-section .stat-box strong { color: #9be0aa; }
+.dark-mode .home-stats-section .stat-label { color: #e7eee8; }
+.dark-mode .home-stats-section .stat-icon {
+    color: #a5e1b4;
+    background: #284a37;
+}
+.dark-mode .home-stats-section .stat-box:nth-child(2) .stat-icon {
+    color: #ffb3b8;
+    background: #4b2930;
+}
+.dark-mode .home-stats-section .stat-box:nth-child(3) .stat-icon {
+    color: #ffe08a;
+    background: #463d27;
+}
+.dark-mode .home-stats-section .stat-box:nth-child(4) .stat-icon {
+    color: #9fe3d2;
+    background: #214641;
+}
+@media (max-width: 767px) {
+    .home-stats-section .stats-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(.55rem, 2.6vw, .9rem);
+        padding-inline: clamp(.65rem, 3vw, 1rem);
+    }
+    .home-stats-section .stat-box {
+        min-height: 163px;
+        padding: 1rem .4rem .9rem;
+        gap: .4rem;
+        border-radius: .95rem;
+    }
+    .home-stats-section .stat-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 13px;
+        font-size: 1.12rem;
+    }
+    .home-stats-section .stat-box strong { font-size: clamp(1.65rem, 6vw, 2.05rem); }
+    .home-stats-section .stat-label { font-size: clamp(.76rem, 3.3vw, .9rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-stats-section .stat-box { transition: none; }
+}
 
 /* -------- طباعة -------- */
 @media print {
