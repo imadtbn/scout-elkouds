@@ -10,12 +10,47 @@
         var header = document.querySelector(".header");
         var navLinks = document.querySelectorAll(".nav-menu a");
         var scrim = document.getElementById("navScrim");
+        var desktopBreakpoint = 1320;
+
+        // توحيد الأيقونات الدلالية في كل الصفحات دون تكرار تعديلات HTML.
+        var linkIcons = {
+            "index.html": "fa-house",
+            "about.html": "fa-people-group",
+            "history.html": "fa-clock-rotate-left",
+            "organization.html": "fa-sitemap",
+            "activities/index.html": "fa-campground",
+            "news/index.html": "fa-newspaper",
+            "gallery.html": "fa-images",
+            "contact.html": "fa-envelope",
+            "join.html": "fa-user-plus",
+            "search.html": "fa-magnifying-glass"
+        };
+        navLinks.forEach(function (link) {
+            var url;
+            try { url = new URL(link.getAttribute("href"), window.location.href); }
+            catch (e) { return; }
+            var path = url.pathname;
+            var iconName = null;
+            Object.keys(linkIcons).forEach(function (suffix) {
+                if (path.endsWith("/" + suffix)) iconName = linkIcons[suffix];
+            });
+            if (!iconName || link.querySelector(".nav-link-icon")) return;
+            var icon = document.createElement("i");
+            icon.className = "nav-link-icon fa-solid " + iconName;
+            icon.setAttribute("aria-hidden", "true");
+            link.insertBefore(icon, link.firstChild);
+        });
+        if (navMenu && !navMenu.id) navMenu.id = "siteNavMenu";
 
         function setMenuOpen(open) {
             if (!navMenu) return;
             navMenu.classList.toggle("active", open);
             document.body.classList.toggle("nav-open", open);
-            if (mobileMenu) mobileMenu.setAttribute("aria-expanded", String(open));
+            if (mobileMenu) {
+                mobileMenu.setAttribute("aria-expanded", String(open));
+                mobileMenu.setAttribute("aria-label", open ? "إغلاق قائمة التنقل" : "فتح قائمة التنقل");
+            }
+            if (header && open) header.classList.remove("hide");
             if (mobileMenu) {
                 var icon = mobileMenu.querySelector("i");
                 if (icon) {
@@ -30,6 +65,7 @@
             mobileMenu.setAttribute("tabindex", "0");
             mobileMenu.setAttribute("aria-expanded", "false");
             mobileMenu.setAttribute("aria-label", "فتح قائمة التنقل");
+            mobileMenu.setAttribute("aria-controls", navMenu.id);
 
             var toggleMenu = function () {
                 setMenuOpen(!navMenu.classList.contains("active"));
@@ -45,11 +81,21 @@
         }
 
         if (scrim) {
-            scrim.addEventListener("click", function () { setMenuOpen(false); });
+            scrim.addEventListener("click", function () {
+                setMenuOpen(false);
+                if (mobileMenu) mobileMenu.focus();
+            });
         }
 
         document.addEventListener("keydown", function (e) {
             if (e.key === "Escape" && navMenu && navMenu.classList.contains("active")) {
+                setMenuOpen(false);
+                if (mobileMenu) mobileMenu.focus();
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > desktopBreakpoint && navMenu && navMenu.classList.contains("active")) {
                 setMenuOpen(false);
             }
         });
@@ -65,7 +111,7 @@
         if (header) {
             window.addEventListener("scroll", function () {
                 var current = window.pageYOffset;
-                if (current > 200 && current > lastScroll) {
+                if (window.innerWidth > desktopBreakpoint && !document.body.classList.contains("nav-open") && current > 200 && current > lastScroll) {
                     header.classList.add("hide");
                 } else {
                     header.classList.remove("hide");
