@@ -88,7 +88,7 @@
 .mobile-menu:hover { background: rgba(255, 255, 255, .32); }
 
 /* -------- نقطة انكسار الهاتف: إعادة بناء كاملة لشريط التنقل -------- */
-@media (max-width: 860px) {
+@media (max-width: 1320px) {
     .nav-container { min-height: var(--header-h-mobile); padding: 10px 16px; }
     .logo-text { font-size: .92rem; }
     .logo-subtext { font-size: .72rem; }
@@ -822,4 +822,231 @@ body.nav-open .nav-scrim { display: block; }
     flex: 0 0 3.25rem;
     height: 3.25rem;
     min-height: 3.25rem;
+}
+
+
+/* ==========================================================================
+   الرأس المتجاوب + هوية القائمة + وضوح الوضع الليلي (2026-10)
+   جميع القواعد محصورة في مكوّن التنقل كي لا تتأثر بطاقات المحتوى.
+   ========================================================================== */
+:root {
+    --header-ink: #fff;
+    --header-accent: #ffe077;
+}
+
+body {
+    /* الهيدر ثابت؛ لا ينبغي له تغطية المسار أو بداية الصفحة. */
+    padding-block-start: var(--header-h);
+}
+.header {
+    z-index: 1300; /* أعلى من الغطاء الخلفي للقائمة */
+    color: var(--header-ink);
+    background: linear-gradient(115deg, #1b6637 0%, #245f34 62%, #a32c31 100%);
+}
+.header .nav-container {
+    width: 100%;
+    min-width: 0;
+}
+.header .logo {
+    text-decoration: none;
+    min-width: 0;
+    gap: .65rem;
+}
+.header .logo-labels { min-width: 0; }
+.header .logo-text,
+.header .logo-subtext,
+.header .nav-menu a,
+.header .nav-icon-btn,
+.header .mobile-menu {
+    color: var(--header-ink);
+}
+.header .logo-text { line-height: 1.42; }
+.header .logo-img {
+    flex: 0 0 auto;
+    border-color: rgba(255, 255, 255, .8);
+}
+.header .nav-menu {
+    padding-inline-start: 0;
+    min-width: 0;
+    gap: .2rem;
+}
+.header .nav-menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    min-height: 42px;
+    padding: .55rem .65rem;
+    line-height: 1.4;
+    border: 1px solid transparent;
+    border-radius: .7rem;
+    text-decoration: none;
+}
+.header .nav-menu .nav-link-icon {
+    flex: 0 0 1.1em;
+    width: 1.1em;
+    font-size: .9em;
+    text-align: center;
+    color: var(--header-accent);
+}
+.header .nav-menu a:hover,
+.header .nav-menu a.active,
+.header .nav-menu a[aria-current="page"] {
+    background: rgba(255, 255, 255, .17);
+    border-color: rgba(255, 224, 119, .45);
+}
+.header .nav-menu a.active .nav-link-icon,
+.header .nav-menu a[aria-current="page"] .nav-link-icon {
+    color: #fff0b3;
+}
+.header .nav-menu a::after { display: none; }
+.header .nav-icon-btn,
+.header .mobile-menu {
+    border: 1px solid rgba(255, 255, 255, .22);
+    background: rgba(255, 255, 255, .12);
+}
+.header .nav-icon-btn:focus-visible,
+.header .mobile-menu:focus-visible,
+.header .nav-menu a:focus-visible,
+.header .logo:focus-visible,
+.header .quick-search-form input:focus-visible {
+    outline: 3px solid var(--header-accent);
+    outline-offset: 3px;
+}
+.header .quick-search-form input[type="search"] {
+    width: 130px;
+    max-width: 100%;
+    border-color: rgba(255, 255, 255, .3);
+    background: #fff;
+    color: #203128;
+}
+.header .quick-search-form input[type="search"]:focus { width: 155px; }
+.header .quick-search-form input[type="search"]::placeholder { color: #5b6861; }
+.header .nav-actions { min-width: 0; }
+
+/* معالجة تباين عناصر التنقل عند قلب متغيّر --white في الوضع الليلي. */
+html.dark-mode { color-scheme: dark; }
+html.dark-mode .header,
+body.dark-mode .header {
+    background: linear-gradient(115deg, #0b2622 0%, #143c32 63%, #46232b 100%);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .38);
+}
+html.dark-mode .header .nav-menu a,
+body.dark-mode .header .nav-menu a,
+html.dark-mode .header .logo-text,
+body.dark-mode .header .logo-text,
+html.dark-mode .header .logo-subtext,
+body.dark-mode .header .logo-subtext,
+html.dark-mode .header .nav-icon-btn,
+body.dark-mode .header .nav-icon-btn,
+html.dark-mode .header .mobile-menu,
+body.dark-mode .header .mobile-menu { color: #fff; }
+html.dark-mode .header .nav-icon-btn,
+body.dark-mode .header .nav-icon-btn,
+html.dark-mode .header .mobile-menu,
+body.dark-mode .header .mobile-menu {
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .24);
+}
+html.dark-mode .header .nav-icon-btn:hover,
+body.dark-mode .header .nav-icon-btn:hover,
+html.dark-mode .header .mobile-menu:hover,
+body.dark-mode .header .mobile-menu:hover { background: rgba(255, 255, 255, .2); }
+html.dark-mode .header .quick-search-form input,
+body.dark-mode .header .quick-search-form input {
+    background: #192b2b;
+    color: #f1f7f2;
+    border-color: #698479;
+}
+html.dark-mode .header .quick-search-form input::placeholder,
+body.dark-mode .header .quick-search-form input::placeholder { color: #b9cac2; }
+html.dark-mode .header .quick-search-form button,
+body.dark-mode .header .quick-search-form button { color: var(--header-accent); }
+
+/* تجاوز ازدحام روابط سطح المكتب قبل أن تتداخل مع الشعار وأزرار التحكم. */
+@media (max-width: 1320px) {
+    body { padding-block-start: var(--header-h-mobile); }
+    .header .nav-container {
+        height: var(--header-h-mobile);
+        min-height: var(--header-h-mobile);
+        padding: 7px 16px;
+        gap: .75rem;
+    }
+    .header .nav-menu {
+        top: var(--header-h-mobile);
+        right: -110%;
+        left: auto;
+        width: min(360px, 88vw);
+        max-width: 100%;
+        height: calc(100vh - var(--header-h-mobile));
+        height: calc(100dvh - var(--header-h-mobile));
+        padding: 12px;
+        gap: 4px;
+        background: linear-gradient(160deg, #1b6637, #20542e 72%, #74332d);
+        overscroll-behavior: contain;
+        border-inline-start: 1px solid rgba(255, 255, 255, .17);
+    }
+    .header .nav-menu.active { right: 0; }
+    .header .nav-menu li { width: 100%; }
+    .header .nav-menu a {
+        display: flex;
+        justify-content: flex-start;
+        min-height: 48px;
+        width: 100%;
+        padding: 10px 15px;
+        font-size: .98rem;
+        white-space: normal;
+    }
+    .header .nav-menu .nav-link-icon {
+        flex-basis: 1.4rem;
+        width: 1.4rem;
+        font-size: 1rem;
+    }
+    .header .nav-menu-mobile-only { display: block; }
+    .header .nav-menu.active::before { content: none; }
+    .header .mobile-menu { display: inline-flex; flex-shrink: 0; }
+    .header .quick-search-form { display: none; }
+    .header #mobileSearchLink { display: inline-flex; }
+    body.dark-mode .header .nav-menu,
+    html.dark-mode .header .nav-menu {
+        background: linear-gradient(160deg, #102f29, #182a2b 75%, #30262b);
+        border-inline-start-color: rgba(255, 224, 119, .22);
+    }
+    .header .nav-menu a.active,
+    .header .nav-menu a[aria-current="page"] {
+        background: rgba(255, 224, 119, .15);
+        border-color: rgba(255, 224, 119, .3);
+    }
+}
+@media (max-width: 600px) {
+    .header .nav-container { gap: .4rem; padding-inline: 12px; }
+    .header .logo { gap: .55rem; }
+    .header .logo-img { width: 38px; height: 38px; }
+    .header .logo-text { font-size: .81rem; }
+    .header .logo-subtext { font-size: .68rem; }
+    .header .nav-actions { gap: .35rem; }
+    .header .nav-icon-btn, .header .mobile-menu {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+}
+@media (max-width: 420px) {
+    .header #mobileSearchLink { display: none; } /* البحث متاح في القائمة */
+    .header .logo-labels { max-width: min(45vw, 165px); }
+    .header .logo-text { font-size: .76rem; }
+    .header .logo-subtext { font-size: .64rem; }
+    .header .nav-actions { gap: .25rem; }
+    .header .nav-container { padding-inline: 10px; }
+}
+@media (max-width: 340px) {
+    .header .logo { gap: .35rem; }
+    .header .logo-img { width: 34px; height: 34px; }
+    .header .logo-labels { max-width: 138px; }
+    .header .logo-text { font-size: .71rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .header, .header .nav-menu,
+    .header .nav-icon-btn, .header .mobile-menu { transition: none; }
 }
