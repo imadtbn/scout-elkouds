@@ -1,43 +1,41 @@
 /*!
- * theme.js — الوضع الليلي/النهاري مع حفظ التفضيل واحترام تفضيل النظام
+ * theme.js — وضع ليلي يدوي مع حفظ الاختيار وبيانات وصول واضحة.
  */
 (function (document) {
     "use strict";
 
-    // تطبيق الوضع المحفوظ فوراً قبل رسم الصفحة لتفادي الوميض (FOUC)
-    (function applyStoredTheme() {
-        var stored = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (stored === "dark" || (!stored && prefersDark)) {
-            document.documentElement.classList.add("dark-mode");
-        }
-    })();
+    var storageKey = "theme";
+    var stored;
+    try { stored = localStorage.getItem(storageKey); }
+    catch (e) { stored = null; }
+    // الوضع النهاري افتراضي؛ لا نغيّره تلقائياً بناءً على إعداد النظام.
+    var initialDark = stored === "dark";
+    document.documentElement.classList.toggle("dark-mode", initialDark);
 
     App.ready(function () {
-        // نقل الفئة إلى body للتوافق مع الأنماط الحالية
-        if (document.documentElement.classList.contains("dark-mode")) {
-            document.body.classList.add("dark-mode");
-        }
-
+        document.body.classList.toggle("dark-mode", initialDark);
         var themeToggle = document.getElementById("themeToggle");
         if (!themeToggle) return;
 
-        var icon = themeToggle.querySelector("i");
-        var setIcon = function (isDark) {
-            if (!icon) return;
-            icon.classList.toggle("fa-moon", !isDark);
-            icon.classList.toggle("fa-sun", isDark);
-        };
+        function updateUI(isDark) {
+            var icon = themeToggle.querySelector("i");
+            if (icon) {
+                icon.classList.toggle("fa-moon", !isDark);
+                icon.classList.toggle("fa-sun", isDark);
+            }
+            themeToggle.setAttribute("aria-pressed", String(isDark));
+            themeToggle.setAttribute("aria-label", isDark ? "تفعيل الوضع النهاري" : "تفعيل الوضع الليلي");
+            themeToggle.setAttribute("title", isDark ? "الوضع النهاري" : "الوضع الليلي");
+        }
 
-        themeToggle.setAttribute("aria-label", "تبديل الوضع الليلي");
-        setIcon(document.body.classList.contains("dark-mode"));
-
+        updateUI(initialDark);
         themeToggle.addEventListener("click", function () {
-            var isDark = document.body.classList.toggle("dark-mode");
+            var isDark = !document.documentElement.classList.contains("dark-mode");
             document.documentElement.classList.toggle("dark-mode", isDark);
-            localStorage.setItem("theme", isDark ? "dark" : "light");
-            setIcon(isDark);
+            document.body.classList.toggle("dark-mode", isDark);
+            try { localStorage.setItem(storageKey, isDark ? "dark" : "light"); }
+            catch (e) { /* نمط الخصوصية قد يمنع التخزين */ }
+            updateUI(isDark);
         });
     });
-
 })(document);
