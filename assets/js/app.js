@@ -76,7 +76,7 @@
             "privacy.html": "fa-shield-halved",
             "terms.html": "fa-file-contract"
         };
-        var sitePrefix = ROOT.replace(/^\\/+|\\/+$/g, "") + "/";
+        var sitePrefix = ROOT.split("/").filter(Boolean).join("/") + "/";
         document.querySelectorAll(".footer .footer-section p > a[href]").forEach(function (link) {
             if (link.classList.contains("footer-link")) return;
             var address;
@@ -89,7 +89,8 @@
             } else if (address.hostname === "imadtbn.github.io" && address.pathname.indexOf("/meteo-dz/") === 0) {
                 iconName = "fa-cloud-sun";
             } else if (address.origin === window.location.origin) {
-                var targetPath = address.pathname.replace(/^\\/+/, "");
+       var targetPath = address.pathname;
+                while (targetPath.charAt(0) === "/") targetPath = targetPath.slice(1);
                 if (targetPath.indexOf(sitePrefix) === 0) targetPath = targetPath.slice(sitePrefix.length);
                 iconName = footerIcons[targetPath] || "fa-link";
             }
